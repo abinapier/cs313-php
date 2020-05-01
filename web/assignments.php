@@ -26,6 +26,9 @@
 	        include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php';
 	    ?>
 	</footer>
+	<script type="text/javascript">
+		addFunctionClass(2);
+	</script>
 
 </body>
 </html>

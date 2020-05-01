@@ -29,5 +29,9 @@
 	    ?>
 	</footer>
 
+	<script type="text/javascript">
+		addFunctionClass(1);
+	</script>
+
 </body>
 </html>

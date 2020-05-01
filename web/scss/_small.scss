@@ -57,12 +57,20 @@ header{
             padding:0;
             li{
                 display: inline;
+                position: relative;
             }
             a{
                 text-decoration: none;
                 padding: 0 0 0 20px;
                 text-transform: uppercase;
                 color: $fontColor;
+            }
+
+            a.active::before{
+                background-color: $accentColor;
+                content: "";
+                height: 20px;
+                width: 35px;
             }
         }
     }
@@ -100,6 +108,7 @@ main{
     button:hover{
         background-color: $hoverColor;
         color: $backgroundColor;
+        transform: scale(1.2);
     }
 
 }
