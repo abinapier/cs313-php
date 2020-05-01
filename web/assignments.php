@@ -13,7 +13,7 @@
 		        include $_SERVER['DOCUMENT_ROOT'] . '/common/nav.php';
 		    ?>
 		</nav>
-		<h1>Assign<br>Ments</h1>
+		<h1><span>Assign</span><span>Ments</span></h1>
 	</header>
 	<main>
 		<h2>CSE 341 Spring 2020:</h2>

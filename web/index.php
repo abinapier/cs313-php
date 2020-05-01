@@ -14,7 +14,7 @@
 		        include $_SERVER['DOCUMENT_ROOT'] . '/common/nav.php';
 		    ?>
 		</nav>
-		<h1>Abi<br>Napier</h1>
+		<h1><span>Abi</span><span>Napier</span></h1>
 		<img src="images/me.jpg" alt="abi napier">
 	</header>
 	<main>
