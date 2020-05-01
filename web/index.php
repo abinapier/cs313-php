@@ -9,7 +9,8 @@
 	<header>
 		<nav>
 			<?php 
-		        include $_SERVER['DOCUMENT_ROOT'] . '/acme/common/header.php';
+				echo $_SERVER['DOCUMENT_ROOT'];
+		        include $_SERVER['DOCUMENT_ROOT'] . '/common/nav.php';
 		    ?>
 		</nav>
 	</header>
