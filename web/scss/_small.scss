@@ -70,8 +70,11 @@ header{
                 position: absolute;
                 background-color: $accentColor;
                 content: "";
-                height: 20px;
-                width: 35px;
+                height: 30px;
+                width: 50px;
+                left: -10px;
+                bottom: -5px;
+                z-index: -1;
             }
         }
     }
