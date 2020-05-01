@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-	<header>
+	<header  class="noimage">
 		<nav>
 			<?php 
 		        include $_SERVER['DOCUMENT_ROOT'] . '/common/nav.php';
