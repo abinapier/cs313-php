@@ -57,16 +57,17 @@ header{
             padding:0;
             li{
                 display: inline;
-                position: relative;
             }
             a{
                 text-decoration: none;
                 padding: 0 0 0 20px;
                 text-transform: uppercase;
                 color: $fontColor;
+                position: relative;
             }
 
             a.active::before{
+                position: absolute;
                 background-color: $accentColor;
                 content: "";
                 height: 20px;
