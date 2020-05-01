@@ -64,7 +64,6 @@ header{
                 text-transform: uppercase;
                 color: $fontColor;
                 position: relative;
-                transition: all 5s ease-in-out;
             }
 
             a.active::before{
@@ -113,6 +112,7 @@ main{
         padding: 8px 12px;
         transition: all .3s ease-in-out;
         text-transform: uppercase;
+        cursor: pointer;
     }
     button:hover{
         background-color: $hoverColor;
