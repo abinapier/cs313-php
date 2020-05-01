@@ -27,7 +27,7 @@
 	    ?>
 	</footer>
 	<script type="text/javascript">
-		addFunctionClass(2);
+		addActiveClass(2);
 	</script>
 
 </body>

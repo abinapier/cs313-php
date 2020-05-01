@@ -30,7 +30,7 @@
 	</footer>
 
 	<script type="text/javascript">
-		addFunctionClass(1);
+		addActiveClass(1);
 	</script>
 
 </body>
