@@ -50,7 +50,7 @@ header{
     nav{
         position: absolute;
         right: 0;
-        top: -7px;
+        top: 0;
         z-index: 3;
         ul{
             list-style: none;
@@ -87,6 +87,9 @@ header{
 
 header.noimage{
     height: 100px;
+    nav{
+        top: -7px;
+    }
     span:nth-of-type(1){
         top:20px;
         margin-top: 0;
