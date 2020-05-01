@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap');
+
+@import "variables";
+
+@import "normalize";
+
+@import "small";
+
+@media only screen and (min-width: 850px) {
+	@import "large";
+}

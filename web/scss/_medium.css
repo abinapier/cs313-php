@@ -1,0 +1,19 @@
+header{
+	h1{
+		font-size: $massiveFont;
+		span:nth-of-type(1){
+			margin:0;
+            left: -60px;
+            top: -30px;
+        }
+        span:nth-of-type(2){
+        	margin:0;
+            right: -60px;
+            bottom: -30px;
+        }
+	}
+	nav{
+		margin:0;
+		top: 35px;
+	}
+}

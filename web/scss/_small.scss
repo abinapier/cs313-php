@@ -1,0 +1,118 @@
+body{
+    background-color: $backgroundColor;
+    color: $fontColor;
+    font-family: $bodyFont;
+    font-size: $normalFont;
+    overflow-x: hidden;
+    overflow-y: scroll; 
+    p{
+        line-height: 1.5;
+    }
+    h1, h2{
+        font-family: $headerFont;
+    }
+    h2{
+        font-size: $mediumFont;
+    }
+    img{
+        max-width: 100%;
+    }
+}
+
+header, main, footer{
+    width: $smallWidth;
+    margin: auto;
+}
+
+header{
+    margin-top: 30px;
+    padding: 18% 0 10% 0;
+    position: relative;
+    h1{
+        font-size: $smallMassiveFont;
+        text-transform: uppercase;
+        margin: 0;
+        span:nth-of-type(1){
+            position: absolute;
+            left:0;
+            top:0;
+            margin-left: -6%;
+            margin-top: 8%;
+        }
+        span:nth-of-type(2){
+            position: absolute;
+            right:0;
+            bottom:0;
+            margin-right: -6%;
+            margin-bottom: 5%;
+        }
+    }
+    nav{
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 3;
+        ul{
+            list-style: none;
+            padding:0;
+            li{
+                display: inline;
+            }
+            a{
+                text-decoration: none;
+                padding: 0 0 0 20px;
+                text-transform: uppercase;
+                color: $fontColor;
+            }
+        }
+    }
+
+}
+
+header.noimage{
+    height: 100px;
+    span:nth-of-type(1){
+        top:20px;
+        margin-top: 0;
+    }
+    span:nth-of-type(2){
+        margin-bottom: 0;
+    }
+}
+
+main{
+    p{
+        span{
+            font-family: $headerFont;
+            font-size: $largeFont;
+            display: block;
+        }
+    }
+    button{
+        border-style: none;
+        font-family: $bodyFont;
+        font-size: $mediumFont;
+        background-color: $accentColor;
+        padding: 8px 12px;
+        transition: all .3s ease-in-out;
+        text-transform: uppercase;
+    }
+    button:hover{
+        background-color: $hoverColor;
+        color: $backgroundColor;
+    }
+
+}
+
+footer{
+    text-align: center;
+}
+
+main, footer{
+    a{
+        color: $accentColor;
+    }
+    a:hover{
+        color: $hoverColor;
+    }
+}
