@@ -3,6 +3,6 @@ function goto(page){
 }
 
 function addActiveClass(navItemNum){
-	navitem = $("nav:nth-of-type("+navItemNum+")");
+	navitem = $("nav li:nth-of-type("+navItemNum+") a");
 	navitem.addClass("active");
 }
