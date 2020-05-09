@@ -23,6 +23,9 @@
         <main>
             <h2>My Cart.</h2>
             <?php
+                if(empty($_SESSION["incart"])){
+                    echo("<p>No items in cart.</p>");
+                }
                 foreach($_SESSION["incart"] as $key => $cartItem){
                     echo("<div class=\"cartItem\">");
                     echo("<img src='images/".$cartItem['image']."_thumb.jpg' alt = '".$cartItem['name']." thumbnail'>");
