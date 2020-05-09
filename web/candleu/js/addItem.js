@@ -10,6 +10,7 @@ function addItemToCart(name, price, image, link){
 
 
 function removeItemFromCart(key){
+    alert("here");
     $.ajax({ url: '/candleu/common/addToCart.php',
             data: {'function2call': 'removeFromCart', 'key':key},
             type: 'post',
