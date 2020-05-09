@@ -38,7 +38,7 @@
                     echo("<h4>".$candle->name."</h4>");
                     echo("<p>$".$candle->price."</p>");
                     echo("</div>");
-                    echo("/a>");
+                    echo("</a>");
                 }
             ?>
         </main>
