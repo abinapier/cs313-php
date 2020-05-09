@@ -11,8 +11,14 @@
             include $_SERVER['DOCUMENT_ROOT'] . 'candleu/common/header.php';
         ?>
         <main>
+            <?php
+                $string = file_get_contents("/candleu/common/candleDetails.json");
+                $json = json_decode($string, true);
+                
+                echo $json['candles'];
+            ?>
+
             <h2>Shop.</h2>
-            <h3>Luxury Candles</h3>
         </main>
 
         <?php 

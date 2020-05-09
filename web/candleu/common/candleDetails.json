@@ -1,0 +1,16 @@
+{
+    "candles": [
+        {"name": "Black Spruce.", "details":"Enjoy the smell of the forest, if the forest was a luxury spa, that is. Warm and familiar, black spruce is the candle for you."},
+        {"name":"Cactus.", "details": "A handformed candle, that looks just like your favorite catcus plants."},
+        {"name":"Blue Mountains.", "details": "Enjoy the smell of the adventure. Bright, clean, and fresh. Hints of rain, musk, and grass"},
+        {"name":"Escape.", "details":"Escape from the everyday. Filled with scents to relax and calm."},
+        {"name":"Gardener.", "details":"There's floral, then there's FLORAL. This candle is the gardener. It knows all the best flowers."},
+        {"name":"Gin and Tonic.","details":"Manly to the extreme. Along with gin and tonic get hits of leather and musk."},
+        {"name":"Harmony.", "details":"Bring your mind and body in harmony. Citrus to invigorate the mind, lavendar to calm the body."},
+        {"name":"L'Amour.", "details": "Imagine sitting in France, eating strawberries with your love. Fresh, fruity, and new."},
+        {"name":"Mahogany.", "details": "Full bodied mahogany wood scent. Along with musk and tobacco, it's new, but it feels familiar."},
+        {"name":"New York City.", "details": "Don't worry, it doesn't smell like the city, just the adventure and drive that buzzes there."},
+        {"name":"Recharge.", "details": "Citrus and almond blend to help recharge your mind."},
+        {"name":"Sleep.", "details": "Lavendar and mint to help relax the mind and body for a restful night."}
+    ]
+}
