@@ -38,13 +38,13 @@
                 echo("<h2>".$name."</h2>");
                 echo("<div class='itemDiv'>");
                 echo("<img src=\"images/".$image.".jpg\" alt=\"".$name." image\">");
-                echo("<div>);
+                echo("<div>");
                 echo("<p><span class=\"price\">$".$price."</span></p>");
                 echo("<p>".$description."</p>");
                 $link = $_SERVER['REQUEST_URI'];
                 echo("<button onclick=\"addItemToCart('".$name."', ".$price.", '".$image."', '".$link."')\">Add To Cart</button>");
-                echo("</div>")
-                echo("</div>")
+                echo("</div>");
+                echo("</div>");
             ?>
             <a href="index.php" title="back to browse">Keep Shopping</a>
         </main>
