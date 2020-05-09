@@ -21,15 +21,18 @@
         <main>
             <h2>My Cart.</h2>
             <?php
-                foreach($_SESSION["incart"] as &$cartItem){
-                    echo("loop");
+                foreach($_SESSION["incart"] as $key => $cartItem){
                     echo("<div class=\"cartItem\">");
                     echo("<img src='images/".$cartItem['image']."_thumb.jpg' alt = '".$cartItem['name']." thumbnail'>");
-                    echo("<h3>NAME:".$cartItem['name']."</h3>");
-                    echo("<p>".$cartItem['price']."</p>");
+                    echo("<h3>".$cartItem['name']."</h3>");
+                    echo("<p>$".$cartItem['price']."</p>");
+                    echo("<button onclick=\"removeItemFromCart(".$key.")\">Remove From Cart</button>");
                     echo("</div>");
                 }
             ?>
+
+            <button>Checkout</button>
+            <a href="index.php" title="back to browse">Keep Shopping</a>
             
         </main>
 
