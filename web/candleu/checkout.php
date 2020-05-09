@@ -29,7 +29,7 @@
                 $total = $total + 7;
                 echo("<span class='cost'>Total: $".$total."</span>");
             ?>
-            <form action="confirmation.php">
+            <form action="confirmation.php" method="post">
                 <label>Name <input type="text" name="name" required></label>
                 <label>Street <input type="text" name="street" required></label>
                 <label>City <input type="text" name="city" required></label>
