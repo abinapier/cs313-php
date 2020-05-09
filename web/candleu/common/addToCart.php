@@ -10,7 +10,7 @@ session_start();
     }
 
     function addToCart($name, $price, $image, $link){
-        $_SESSION["incart"] = ["name"=>$name, "price"=>$price, "image"=>$image, "link"=>$link];
-        echo($_SESSION["incart"]["name"]);
+        array_push($_SESSION["incart"], ["name"=>$name, "price"=>$price, "image"=>$image, "link"=>$link]);
+        echo($_SESSION["incart"][0]["name"]);
     }
 ?>

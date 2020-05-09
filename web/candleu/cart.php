@@ -1,6 +1,9 @@
 
 <?php
     session_start();
+    if(!(isset($_SESSION['incart']))){
+        $_SESSION['incart'] = array();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

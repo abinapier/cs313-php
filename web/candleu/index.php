@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if(!(isset($_SESSION['incart']))){
+        $_SESSION['incart'] = array();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +15,7 @@
     </head>
     <body>
         <?php 
-            $_SESSION["incart"];
+            
             include $_SERVER['DOCUMENT_ROOT'] . '/candleu/common/header.php';
         ?>
         <main>
