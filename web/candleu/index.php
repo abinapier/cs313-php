@@ -8,6 +8,8 @@
     </head>
     <body>
         <?php 
+            session_start();
+            $_SESSION["incart"];
             include $_SERVER['DOCUMENT_ROOT'] . '/candleu/common/header.php';
         ?>
         <main>

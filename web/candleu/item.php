@@ -5,6 +5,7 @@
         <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
         <?php 
@@ -16,10 +17,8 @@
                 $json = json_decode($string, true);
 
                 $name = $_GET["name"];
-                echo $name;
                 $price = floatval($_GET["price"]);
                 $image = $_GET["image"].".jpg";
-                $description = "no match";
 
                 foreach ($json['candles'] as &$candle){
                     if(strcmp($candle["name"], $name) == 0){
@@ -27,12 +26,16 @@
                     }
                 }
 
-                echo $description;
+    
+                echo("<h2>".$name."</h2>");
+                echo("<img src=\"/images/".$image."\" alt=\"".$name." image\">");
+                echo("<p><span class=\"price\">$".$price."</span></p>");
+                echo("<p>".$description."</p>");
+                $link = $_SERVER['REQUEST_URI'];
+                echo("<button onclick=\"addItemToCart(".$name.", ".$price.", ".$image.", ".$link.")\">Add To Cart</button>")
             ?>
-
-            <h2>Shop.</h2>
         </main>
-
+                <img src="" alt="">
         <?php 
             include $_SERVER['DOCUMENT_ROOT'] . '/candleu/common/footer.php';
         ?>
