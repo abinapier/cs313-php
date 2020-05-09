@@ -8,11 +8,12 @@
     </head>
     <body>
         <?php 
-            include $_SERVER['DOCUMENT_ROOT'] . 'candleu/common/header.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/candleu/common/header.php';
         ?>
         <main>
             <?php
                 $string = file_get_contents("/candleu/common/candleDetails.json");
+                echo $string;
                 $json = json_decode($string, true);
                 
                 echo $json['candles'];
@@ -22,7 +23,7 @@
         </main>
 
         <?php 
-            include $_SERVER['DOCUMENT_ROOT'] . 'candleu/common/footer.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/candleu/common/footer.php';
         ?>
     </body>
 </html>
