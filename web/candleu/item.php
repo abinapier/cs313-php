@@ -35,6 +35,7 @@
                 $link = $_SERVER['REQUEST_URI'];
                 echo("<button onclick=\"addItemToCart('".$name."', ".$price.", '".$image."', '".$link."')\">Add To Cart</button>");
             ?>
+            <a href="index.php" title="back to browse">Keep Shopping</a>
         </main>
                 <img src="" alt="">
         <?php 
