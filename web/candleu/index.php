@@ -33,7 +33,7 @@
                 $candles[] = new Item("Gardener.", 24.99, "There's floral, then there's FLORAL. This candle is the gardener. It knows all the best flowers.", "gardener");
                 $candles[] = new Item("Gin and Tonic.", 22.99, "Manly to the extreme. Along with gin and tonic get hits of leather and musk.", "ginandtonic");
                 $candles[] = new Item("Harmony.", 18.99, "Bring your mind and body in harmony. Citrus to invigorate the mind, lavendar to calm the body.", "harmony");
-                $candles[] = new Item("L'Amour.", 20.99, "Imagine sitting in France, eating strawberries with your love. Fresh, fruity, and new.", "lamour");
+                $candles[] = new Item("LAmour.", 20.99, "Imagine sitting in France, eating strawberries with your love. Fresh, fruity, and new.", "lamour");
                 $candles[] = new Item("Mahogany.", 22.99, "Full bodied mahogany wood scent. Along with musk and tobacco, it's new, but it feels familiar.", "mahogany");
                 $candles[] = new Item("New York City.", 22.99, "Don't worry, it doesn't smell like the city, just the adventure and drive that buzzes there.", "newyork");
                 $candles[] = new Item("Recharge.", 17.99, "Citrus and almond blend to help recharge your mind.", "recharge");
