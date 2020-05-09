@@ -35,7 +35,7 @@
                     $total = $total + $cartItem['price'];
                 }
                 echo("<span class='cost'>Total: $".($cost+7)."</span>");
-
+                echo($_POST["name"]);
                 $name = $street = $city = $zip= "";
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $name = test_input($_POST["name"]);
