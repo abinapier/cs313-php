@@ -32,7 +32,7 @@
                 echo("<p><span class=\"price\">$".$price."</span></p>");
                 echo("<p>".$description."</p>");
                 $link = $_SERVER['REQUEST_URI'];
-                echo("<button onclick=\"addItemToCart('".$name."', '".$price."', '".$image."', '".$link."')\">Add To Cart</button>");
+                echo("<button onclick=\"addItemToCart('".$name."', ".$price.", '".$image."', '".$link."')\">Add To Cart</button>");
             ?>
         </main>
                 <img src="" alt="">
