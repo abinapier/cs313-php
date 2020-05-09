@@ -14,7 +14,7 @@
     </head>
     <body>
         <?php 
-            include $_SERVER['DOCUMENT_ROOT'] . 'candleu/common/header.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/candleu/common/header.php';
         ?>
         <main>
             <h2>Thank You.</h2>
@@ -22,7 +22,7 @@
         </main>
 
         <?php 
-            include $_SERVER['DOCUMENT_ROOT'] . 'candleu/common/footer.php';
+            include $_SERVER['DOCUMENT_ROOT'] . '/candleu/common/footer.php';
         ?>
     </body>
 </html>

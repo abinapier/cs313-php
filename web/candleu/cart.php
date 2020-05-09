@@ -23,6 +23,7 @@
         <main>
             <h2>My Cart.</h2>
             <?php
+                $total = 0;
                 if(empty($_SESSION["incart"])){
                     echo("<p>No items in cart.</p>");
                 }
@@ -33,7 +34,10 @@
                     echo("<p>$".$cartItem['price']."</p>");
                     echo("<button onclick=\"removeItemFromCart(".$key.")\">Remove From Cart</button>");
                     echo("</div>");
+                    $total = $total + $cartItem['price'];
                 }
+
+                echo("<span class='cost'>Subtotal: $".$total."</span>");
             ?>
 
             <button onclick="location.href='checkout.php';">Checkout</button>
