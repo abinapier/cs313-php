@@ -8,7 +8,6 @@
     </head>
     <body>
         <?php 
-            session_start();
             include $_SERVER['DOCUMENT_ROOT'] . 'candleu/common/header.php';
         ?>
         <main>
