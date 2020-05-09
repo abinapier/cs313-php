@@ -31,7 +31,7 @@
                 $candles[] = new Item("Sleep.", 12.99, "Lavendar and mint to help relax the mind and body for a restful night.", "sleep");
                 
                 foreach($candles as &$candle){
-                    $url = urlencode("name=".$candle->name."&price=".$candle->price."&image=".$candle->image);
+                    $url = "name=".urlencode($candle->name)."&price=".urlencode($candle->price)."&image=".urlencode($candle->image);
                     echo("<a href=\"https://stormy-coast-44878.herokuapp.com/candleu/item.php?".$url."\">");
                     echo("<div class=\"item\">\n");
                     echo("<img src=\"images/".$candle->image."_thumb.jpg\" alt=\"".$candle->name." image\">" );
