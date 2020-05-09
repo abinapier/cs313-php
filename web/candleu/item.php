@@ -13,10 +13,13 @@
         <main>
             <?php
                 $string = file_get_contents($_SERVER['DOCUMENT_ROOT']."/candleu/common/candleDetails.json");
-                echo $string;
                 $json = json_decode($string, true);
                 
                 echo $json['candles'];
+
+                foreach ($json['candles'] as &$candle){
+                    echo $candle['name'];
+                }
             ?>
 
             <h2>Shop.</h2>
