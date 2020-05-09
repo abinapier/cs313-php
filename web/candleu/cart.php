@@ -24,7 +24,7 @@
                 foreach($_SESSION["incart"] as &$cartItem){
                     echo("loop");
                     echo("<div class=\"cartItem\">");
-                    echo("<img src='".$cartItem['image']."_thumb.jpg' alt = '".$cartItem['name']." thumbnail'>");
+                    echo("<img src='images/".$cartItem['image']."_thumb.jpg' alt = '".$cartItem['name']." thumbnail'>");
                     echo("<h3>NAME:".$cartItem['name']."</h3>");
                     echo("<p>".$cartItem['price']."</p>");
                     echo("</div>");

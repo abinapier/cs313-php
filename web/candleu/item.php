@@ -44,7 +44,6 @@
             ?>
             <a href="index.php" title="back to browse">Keep Shopping</a>
         </main>
-                <img src="" alt="">
         <?php 
             include $_SERVER['DOCUMENT_ROOT'] . '/candleu/common/footer.php';
         ?>
