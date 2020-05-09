@@ -23,8 +23,7 @@
 
                 foreach ($json['candles'] as &$candle){
                     if(strcmp($candle["name"], $name) == 0){
-                        echo $candle["description"];
-                        $description = $candle["description"];
+                        $description = $candle["details"];
                     }
                 }
 
