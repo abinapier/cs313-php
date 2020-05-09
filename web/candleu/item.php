@@ -14,8 +14,6 @@
             <?php
                 $string = file_get_contents($_SERVER['DOCUMENT_ROOT']."/candleu/common/candleDetails.json");
                 $json = json_decode($string, true);
-                
-                echo $json['candles'];
 
                 foreach ($json['candles'] as &$candle){
                     echo $candle['name'];
