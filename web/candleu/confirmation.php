@@ -3,6 +3,7 @@
     if(!(isset($_SESSION['incart']))){
         $_SESSION['incart'] = array();
     }
+    echo($_POST["name"]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
