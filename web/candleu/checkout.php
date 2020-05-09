@@ -30,10 +30,10 @@
                 echo("<span class='cost'>Total: $".$total."</span>");
             ?>
             <form action="confirmation.php">
-                <label>Name <input type="text" name="name"></label>
-                <label>Street <input type="text" name="street"></label>
-                <label>City <input type="text" name="city"></label>
-                <label>State <select>
+                <label>Name <input type="text" name="name" required></label>
+                <label>Street <input type="text" name="street" required></label>
+                <label>City <input type="text" name="city" required></label>
+                <label>State <select required>
                     <option value="" disabled selected>Select state</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
@@ -87,7 +87,7 @@
                     <option value="WI">Wisconsin</option>
                     <option value="WY">Wyoming</option>
                 </select></label>
-                <label>Zip Code <input type="text" name="zip"></label>
+                <label>Zip Code <input type="text" name="zip" required></label>
                 <input type="submit" value="Place Your Order"></input>	
             </form>
             
