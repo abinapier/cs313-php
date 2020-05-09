@@ -88,7 +88,7 @@
                     <option value="WY">Wyoming</option>
                 </select></label>
                 <label>Zip Code <input type="text" name="zip" id="zip" required></label>
-                <input type="submit" value="Place Your Order"></input>	
+                <input type="submit" value="Place Your Order">	
             </form>
             
         </main>
