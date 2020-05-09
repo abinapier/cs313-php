@@ -43,10 +43,10 @@
                 echo("<p>".$description."</p>");
                 $link = $_SERVER['REQUEST_URI'];
                 echo("<button onclick=\"addItemToCart('".$name."', ".$price.", '".$image."', '".$link."')\">Add To Cart</button>");
+                echo("<a href=\"index.php\" title=\"back to browse\">Keep Shopping</a>");
                 echo("</div>");
                 echo("</div>");
             ?>
-            <a href="index.php" title="back to browse">Keep Shopping</a>
         </main>
         <?php 
             include $_SERVER['DOCUMENT_ROOT'] . '/candleu/common/footer.php';
