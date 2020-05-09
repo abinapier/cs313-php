@@ -8,10 +8,21 @@
     </head>
     <body>
         <?php 
+            session_start();
+            $_SESSION["incart"];
             include $_SERVER['DOCUMENT_ROOT'] . 'candleu/common/header.php';
         ?>
         <main>
-            <h2>Cart.</h2>
+            <h2>My Cart.</h2>
+            <?php
+                foreach($_SESSION['incart'] as &$cartItem){
+                    echo("<div class=\"cartItem\">");
+                    echo("<img src='".$cartItem['image']."_thumb.jpg' alt = '".$cartItem['name']." thumbnail'>");
+                    echo("<h3>".$cartItem['name']."</h3>");
+                    echo("<p>".$cartItem['price']."</p>");
+                    echo("</div>");
+                }
+            ?>
             
         </main>
 

@@ -10,6 +10,8 @@
     </head>
     <body>
         <?php 
+            session_start();
+            $_SESSION["incart"];
             include $_SERVER['DOCUMENT_ROOT'] . '/candleu/common/header.php';
         ?>
         <main>
@@ -19,7 +21,7 @@
 
                 $name = $_GET["name"];
                 $price = floatval($_GET["price"]);
-                $image = $_GET["image"].".jpg";
+                $image = $_GET["image"];
 
                 foreach ($json['candles'] as &$candle){
                     if(strcmp($candle["name"], $name) == 0){
@@ -29,7 +31,7 @@
 
     
                 echo("<h2>".$name."</h2>");
-                echo("<img src=\"images/".$image."\" alt=\"".$name." image\">");
+                echo("<img src=\"images/".$image.".jpg\" alt=\"".$name." image\">");
                 echo("<p><span class=\"price\">$".$price."</span></p>");
                 echo("<p>".$description."</p>");
                 $link = $_SERVER['REQUEST_URI'];
