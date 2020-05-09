@@ -12,7 +12,7 @@
         ?>
         <main>
             <?php
-                $string = file_get_contents("/candleu/common/candleDetails.json");
+                $string = file_get_contents($_SERVER['DOCUMENT_ROOT']."/candleu/common/candleDetails.json");
                 echo $string;
                 $json = json_decode($string, true);
                 
