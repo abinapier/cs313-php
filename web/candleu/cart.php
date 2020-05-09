@@ -36,7 +36,7 @@
                 }
             ?>
 
-            <button>Checkout</button>
+            <button onclick="location.href='checkout.php';">Checkout</button>
             <a href="index.php" title="back to browse">Keep Shopping</a>
             
         </main>
