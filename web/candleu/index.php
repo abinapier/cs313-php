@@ -18,9 +18,10 @@
             
             include $_SERVER['DOCUMENT_ROOT'] . '/candleu/common/header.php';
         ?>
-        <main class="shop">
+        <main>
             <h2>Shop.</h2>
             <h3>Luxury Candles</h3>
+            <div class="shop">
             <?php
                 include_once('common/itemClass.php');
 
@@ -49,6 +50,7 @@
                     echo("</a>");
                 }
             ?>
+            </div>
         </main>
 
         <?php 
