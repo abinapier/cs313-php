@@ -16,9 +16,10 @@
                 $json = json_decode($string, true);
 
                 $name = $_GET["name"];
+                echo $name;
                 $price = floatval($_GET["price"]);
                 $image = $_GET["image"].".jpg";
-                $description;
+                $description = "no match";
 
                 foreach ($json['candles'] as &$candle){
                     if(strcmp($candle["name"], $name) == 0){
