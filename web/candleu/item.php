@@ -29,7 +29,7 @@
 
     
                 echo("<h2>".$name."</h2>");
-                echo("<img src=\"/images/".$image."\" alt=\"".$name." image\">");
+                echo("<img src=\"images/".$image."\" alt=\"".$name." image\">");
                 echo("<p><span class=\"price\">$".$price."</span></p>");
                 echo("<p>".$description."</p>");
                 $link = $_SERVER['REQUEST_URI'];
