@@ -14,8 +14,8 @@
         <main>
             <h2>My Cart.</h2>
             <?php
-
-                foreach($_SESSION['incart'] as &$cartItem){
+                echo($_SESSION["incart"]);
+                foreach($_SESSION["incart"] as &$cartItem){
                     echo("loop");
                     echo("<div class=\"cartItem\">");
                     echo("<img src='".$cartItem['image']."_thumb.jpg' alt = '".$cartItem['name']." thumbnail'>");
