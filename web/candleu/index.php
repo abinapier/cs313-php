@@ -18,7 +18,7 @@
             
             include $_SERVER['DOCUMENT_ROOT'] . '/candleu/common/header.php';
         ?>
-        <main>
+        <main class="shop">
             <h2>Shop.</h2>
             <h3>Luxury Candles</h3>
             <?php
