@@ -20,7 +20,7 @@
 	<main>
 		<h2>CSE 341 Spring 2020:</h2>
 		<ul>
-			<li>Coming Soon</li>
+			<li><a href="candleu/index.php">Shopping Cart Site</a></li>
 		</ul>
 	</main>
 	<footer>
