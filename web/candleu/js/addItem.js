@@ -17,7 +17,7 @@ function removeItemFromCart(key){
             data: {'function2call': 'removeFromCart', 'key':key},
             type: 'post',
             success: function(output) {
-                
+                location.reload(true);
             }
     });
 }
