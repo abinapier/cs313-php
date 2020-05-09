@@ -10,7 +10,6 @@
 
     function addToCart($name, $price, $image, $link){
         $_SESSION["incart"] = ["name"=>$name, "price"=>$price, "image"=>$image, "link"=>$link];
-        echo($_SESSION["incart"]);
-        return "success!";
+        echo($_SESSION["incart"][0]);
     }
 ?>
