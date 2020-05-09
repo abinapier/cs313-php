@@ -17,7 +17,7 @@
             include $_SERVER['DOCUMENT_ROOT'] . '/candleu/common/header.php';
         ?>
         
-        <main>
+        <main class="confirmation">
             <h2>Thank You.</h2>
             <h3>Your order has been sent.</h3>
             <h4>Order Summary:</h4>
@@ -32,7 +32,7 @@
                     echo("<h3>".$cartItem['name']."</h3>");
                     echo("<p>$".$cartItem['price']."</p>");
                     echo("</div>");
-                    $total = $cost + $cartItem['price'];
+                    $cost = $cost + $cartItem['price'];
                 }
                 echo("<span class='cost'>Total: $".($cost+7)."</span>");
                 $name = $street = $city = $zip= "";
