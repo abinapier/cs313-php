@@ -12,6 +12,7 @@
         <title>Candleu Cart.</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css"> 
+        <script src="js/addItem.js"></script>
     </head>
     <body>
         <?php 
