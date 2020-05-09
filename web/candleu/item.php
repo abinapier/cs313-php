@@ -15,9 +15,18 @@
                 $string = file_get_contents($_SERVER['DOCUMENT_ROOT']."/candleu/common/candleDetails.json");
                 $json = json_decode($string, true);
 
+                $name = $_GET["name"];
+                $price = floatval($_GET["price"]);
+                $image = $_GET["image"].".jpg";
+                $description;
+
                 foreach ($json['candles'] as &$candle){
-                    echo $candle['name'];
+                    if(strcmp($candle["name"], $name) == 0){
+                        $description = $candle["description"];
+                    }
                 }
+
+                echo $description;
             ?>
 
             <h2>Shop.</h2>
