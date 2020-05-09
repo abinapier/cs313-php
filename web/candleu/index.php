@@ -31,7 +31,11 @@
                 $candles[] = new Item("Sleep.", 22.99, "Lavendar and mint to help relax the mind and body for a restful night.", "sleep");
                 
                 foreach($candles as &$candle){
-                    echo($candle->name);
+                    echo("<div class=\"item\">\n");
+                    echo("<img src=\"images/".$candle->image."_thumb.jpg\" alt=\"".$candle->name." image\">" );
+                    echo("<h4>".$candle->name."</h4>");
+                    echo("<p>$".$candle->price."</p>");
+                    echo("</div>");
                 }
             ?>
         </main>
