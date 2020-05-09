@@ -29,11 +29,11 @@
                 $total = $total + 7;
                 echo("<span class='cost'>Total: $".$total."</span>");
             ?>
-            <form action="confirmation.php" method="post">
-                <label>Name<br> <input type="text" name="name" required></label>
-                <label>Street<br> <input type="text" name="street" required></label>
-                <label>City<br> <input type="text" name="city" required></label>
-                <label>State<br> <select required>
+            <form action="confirmation.php" method=>
+                <label>Name <input type="text" name="name" required></label>
+                <label>Street <input type="text" name="street" required></label>
+                <label>City <input type="text" name="city" required></label>
+                <label>State <select required>
                     <option value="" disabled selected>Select state</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
@@ -87,7 +87,7 @@
                     <option value="WI">Wisconsin</option>
                     <option value="WY">Wyoming</option>
                 </select></label>
-                <label>Zip Code<br> <input type="text" name="zip" required></label>
+                <label>Zip Code <input type="text" name="zip" required></label>
                 <input type="submit" value="Place Your Order"></input>	
             </form>
             
