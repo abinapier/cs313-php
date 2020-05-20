@@ -22,9 +22,8 @@
                 include '../view/login.php';
                 exit;
             }
-            echo login($clientEmail, $clientPassword);
-            //echo $userFound;
-            exit;
+            login($clientEmail, $clientPassword);
+            
             if($userFound){
                 $userName = getName();
                 $message = "<p>Thanks $userName, you are logged in.</p>";
