@@ -20,7 +20,10 @@ header div{
     justify-content: space-evenly;
 }
 header .logo{
-    width: 20%;
+    width: 80%;
+}
+header .logo>img{
+    max-width: 100%;
 }
 header a{
     text-decoration: none;
