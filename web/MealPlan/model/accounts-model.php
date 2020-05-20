@@ -9,7 +9,6 @@ function login($email, $password){
         if($row['email']==$email && $row['password']==$password){
             $userFound = true;
             $_SESSION["user_id"] = $row['id'];
-            $userFound = true;
         }
     
     }
