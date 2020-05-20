@@ -19,7 +19,7 @@ header div{
     display: flex;
     justify-content: space-evenly;
 }
-header div img{
+header .logo{
     width: 20%;
 }
 header a{
