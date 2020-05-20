@@ -14,7 +14,7 @@ function login($email, $password){
     
     }
 
-    return $userFound;
+    echo $userFound;
 }
 
 function regClient(){
