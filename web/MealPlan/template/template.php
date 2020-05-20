@@ -13,7 +13,7 @@
 </header>
 
 <main>
-    <h1>MealPlan</h1>
+    <h1>Content Title Here</h1>
 </main>
 
 <footer>
