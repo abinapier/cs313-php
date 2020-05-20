@@ -16,6 +16,7 @@ header a{
 
 nav{
     box-sizing: border-box;
+    padding: 10px 5px;
 }
 nav ul{
     padding:0;
