@@ -6,12 +6,12 @@ body{
 }
 
 nav{
-    background-color: #45a11d;
+    background-color: rgb(77, 170, 87);
 }
 
 header a{
     text-decoration: none;
-    color: #45a11d;
+    color: #4ba524;
 }
 
 nav{
@@ -41,4 +41,12 @@ footer{
     color: white;
     text-align: center;
     padding: 10px;
+}
+
+.link-btn{
+    padding: 10px 5px;
+    text-decoration: none;
+    color: #45a11d;
+    border: solid 1px #45a11d;
+    border-radius: 50%;
 }

@@ -15,9 +15,9 @@
 <main>
     <h1>MealPlan</h1>
     <div class="homepage">
-        <a href="/MealPlan/recipe?action=search" title="Browse Recipes">Browse Your Recipes</a>
-        <a href="/MealPlan/mealPlan?action=search" title="Browse Meal Plans">Browse Your Meal Plans</a>
-        <a href="/MealPlan/shoppingList?action=view" title="View Your Shopping List">Browse Your Recipes</a>
+        <a class="link-btn" href="/MealPlan/recipe?action=search" title="Browse Recipes">Browse Your Recipes</a>
+        <a class="link-btn" href="/MealPlan/mealPlan?action=search" title="Browse Meal Plans">Browse Your Meal Plans</a>
+        <a class="link-btn" href="/MealPlan/shoppingList?action=view" title="View Your Shopping List">Browse Your Recipes</a>
     </div>
 </main>
 
