@@ -1,12 +1,12 @@
 <?php
 function login($email, $password){
     $db = dbConnect();
-    echo "here!";
-    exit;
+    
     $userFound = false;
 
     foreach ($db->query('SELECT * FROM users') as $row)
     {
+        echo "here!";
         if($row['email']==$email && $row['password']==$password){
             $userFound = true;
             $_SESSION["user_id"] = $row['id'];
@@ -14,6 +14,7 @@ function login($email, $password){
         }
     
     }
+    exit;
     return $userFound;
 }
 
