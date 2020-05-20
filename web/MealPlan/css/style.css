@@ -69,6 +69,7 @@ footer{
     border-radius: 25px;
     transition: all .2s ease-in-out;
     margin: 5px;
+    display: inline-block;
 }
 
 .link-btn:hover{

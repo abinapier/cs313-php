@@ -17,7 +17,7 @@
     <div class="homepage">
         <a class="link-btn" href="/MealPlan/recipe?action=search" title="Browse Recipes">Browse Your Recipes</a>
         <a class="link-btn" href="/MealPlan/mealPlan?action=search" title="Browse Meal Plans">Browse Your Meal Plans</a>
-        <a class="link-btn" href="/MealPlan/shoppingList?action=view" title="View Your Shopping List">Browse Your Recipes</a>
+        <a class="link-btn" href="/MealPlan/shoppingList?action=view" title="View Your Shopping List">View Your Shopping List</a>
     </div>
 </main>
 
