@@ -23,8 +23,6 @@
                 exit;
             }
             $userFound = login($clientEmail, $clientPassword);
-            echo "this worked";
-            exit;
             if($userFound){
                 $userName = getName();
                 $message = "<p>Thanks $userName, you are logged in.</p>";
