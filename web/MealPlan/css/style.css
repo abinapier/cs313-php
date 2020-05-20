@@ -13,11 +13,14 @@ header a{
     color: #1B512D;
 }
 
+
 nav ul{
-    margin:0;
+    padding:0;
+    margin: auto;
 }
 nav li{
     list-style: none;
+    display: inline-block;
 }
 header nav a{
     color: white;
