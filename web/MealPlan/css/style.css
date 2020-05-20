@@ -14,7 +14,9 @@ header a{
     color: #45a11d;
 }
 
-
+nav{
+    box-sizing: border-box;
+}
 nav ul{
     padding:0;
     margin: auto;
@@ -22,7 +24,6 @@ nav ul{
 nav li{
     list-style: none;
     display: inline-block;
-    box-sizing: border-box;
 }
 header nav a{
     color: white;
