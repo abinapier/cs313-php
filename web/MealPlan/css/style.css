@@ -2,10 +2,12 @@
 
 body{
     font-family: 'Jost', sans-serif;
+    margin:0;
+    background-color: #F3F9D2;
 }
 
 nav{
-    background-color: #1B512D;
+    background-color: #63264A;
 }
 
 header a{
@@ -24,9 +26,17 @@ nav li{
 }
 header nav a{
     color: white;
+    padding: 10px 5px;
+    transition: all .5s ease-in-out;
+}
+
+header nav a:hover{
+    background-color: #3D0B37;
 }
 
 footer{
     background-color: #1B512D;
     color: white;
+    text-align: center;
+    padding: 10px;
 }
