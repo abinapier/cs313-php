@@ -21,11 +21,11 @@ header>div{
     align-items: center;
 }
 header .logo{
-    width: 60%;
+    width: 50%;
     text-align: left;
 }
 header .logo>img{
-    max-width: 100%;
+    max-width: 60%;
 }
 header a{
     text-decoration: none;
