@@ -4,6 +4,7 @@
 </div>
 <nav>
     <ul>
+        <li><a href="/MealPlan/">Home</a></li>
         <li><a href="/MealPlan/recipe?action=search">My Recipes</a></li>
         <li><a href="/MealPlan/mealPlan?action=search">My Meal Plans</a></li>
         <li><a href="/MealPlan/shoppingList?action=view">My Shopping List</a></li>
