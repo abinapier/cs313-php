@@ -5,6 +5,9 @@ body{
     margin:0;
 }
 
+main{
+    padding: 15px;
+}
 nav{
     background-color: rgb(77, 170, 87);
 }
@@ -44,9 +47,9 @@ footer{
 }
 
 .link-btn{
-    padding: 10px 5px;
+    padding: 5px 10px;
     text-decoration: none;
     color: #45a11d;
     border: solid 1px #45a11d;
-    border-radius: 50%;
+    border-radius: 25px;
 }
