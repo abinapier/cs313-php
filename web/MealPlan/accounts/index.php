@@ -17,15 +17,14 @@
             $clientEmail = filter_input(INPUT_POST, 'email');
             $clientPassword = filter_input(INPUT_POST, 'password');
 
-            echo $clientPassword;
-            echo $clientPassword;
-            exit;
             if(empty($clientEmail)||empty($clientPassword)){
                 $message = '<p>Please provide your email and password.</p>';
                 include '../view/login.php';
                 exit;
             }
             $userFound = login($clientEmail, $clientPassword);
+            echo "this worked";
+            exit;
             if($userFound){
                 $userName = getName();
                 $message = "<p>Thanks $userName, you are logged in.</p>";

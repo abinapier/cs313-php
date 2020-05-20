@@ -18,10 +18,14 @@ session_start();
 
 <main>
     <h1>Login</h1>
-
+    <?php
+    if (isset($message)) {
+        echo $message;
+    }
+    ?>
     <form action="/MealPlan/accounts/index.php" method="post">
-        <label>Email:<input type="text" name="email" required></label>
-        <label>Password:<input type="password" name="password" required></label>
+        <label>Email:<input type="text" name="email"></label>
+        <label>Password:<input type="password" name="password"></label>
         <input type="submit" value="Sign In">
         <input type="hidden" name="action" value="login">
     </form>
