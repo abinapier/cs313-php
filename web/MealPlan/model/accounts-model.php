@@ -4,7 +4,7 @@ function login($email, $password){
     
     $userFound = false;
 
-    foreach ($db->query('SELECT * FROM users') as $row)
+    /*foreach ($db->query('SELECT * FROM users') as $row)
     {
         echo "here!";
         if($row['email']==$email && $row['password']==$password){
@@ -13,7 +13,14 @@ function login($email, $password){
             $userFound = true;
         }
     
+    }*/
+
+    $statement = $db->query('SELECT * FROM users');
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    {
+        echo "here";
     }
+
     exit;
     return $userFound;
 }
