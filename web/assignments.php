@@ -21,6 +21,7 @@
 		<h2>CSE 341 Spring 2020:</h2>
 		<ul>
 			<li><a href="candleu/index.php">Shopping Cart Site</a></li>
+			<li><a href="MealPlan">Meal Plan Database Site</a></li>
 		</ul>
 	</main>
 	<footer>
