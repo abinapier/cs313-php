@@ -6,7 +6,6 @@ function login($email, $password){
 
     foreach ($db->query('SELECT * FROM users') as $row)
     {
-        echo "here!";
         if($row['email']==$email && $row['password']==$password){
             $userFound = true;
             $_SESSION["user_id"] = $row['id'];
