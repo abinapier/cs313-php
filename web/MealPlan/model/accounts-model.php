@@ -16,9 +16,12 @@ function login($email, $password){
     }*/
 
     $statement = $db->query('SELECT * FROM users');
+    echo 'here 1';
+    exit;
     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
-        echo "here";
+        echo "here 2";
+        exit;
     }
 
     exit;
