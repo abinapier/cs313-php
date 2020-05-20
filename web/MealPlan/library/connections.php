@@ -7,7 +7,7 @@ function dbConnect(){
 
         $dbHost = $dbOpts["host"];
         $dbPort = $dbOpts["port"];
-        $dbUser = $dbOpts["use"];
+        $dbUser = $dbOpts["user"];
         $dbPassword = $dbOpts["pass"];
         $dbName = ltrim($dbOpts["path"],'/');
 
