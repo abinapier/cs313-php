@@ -14,10 +14,12 @@ nav{
     margin: auto;
 }
 
-header{
+header div{
     padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
 }
-header img{
+header div img{
     width: 20%;
 }
 header a{
