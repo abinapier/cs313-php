@@ -1,6 +1,8 @@
 <?php
 function login($email, $password){
     $db = dbConnect();
+    echo "here!";
+    exit;
     $userFound = false;
 
     foreach ($db->query('SELECT * FROM users') as $row)
