@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +19,14 @@
 <main>
     <h1>Login</h1>
 
-    <p>Login page eventually</p>
+    <form action="/MealPlan/accounts/index.php" method="post">
+        <label>Email:<input type="text" name="email" required></label>
+        <label>Password:<input type="password" name="password" required></label>
+        <input type="submit" value="Sign In">
+        <input type="hidden" name="action" value="login">
+    </form>
+
+    <a href="/MealPlan/accounts/index.php?action=register" title="Create a new account" class="link-btn">Create a New Account</a>
 </main>
 
 <footer>
