@@ -9,17 +9,17 @@ main{
     padding: 15px;
 }
 nav{
-    background-color: rgb(77, 170, 87);
+    background-color: #45a11d;
 }
 
 header a{
     text-decoration: none;
-    color: #4ba524;
+    color: #45a11d;
 }
 
 nav{
     box-sizing: border-box;
-    padding: 10px 5px;
+    padding: 5px 10px;
 }
 nav ul{
     padding:0;
@@ -31,7 +31,7 @@ nav li{
 }
 header nav a{
     color: white;
-    padding: 10px 5px;
+    padding: 5px 10px;
     transition: all .5s ease-in-out;
 }
 
@@ -52,4 +52,9 @@ footer{
     color: #45a11d;
     border: solid 1px #45a11d;
     border-radius: 25px;
+    transition: all .5s ease-in-out;
+}
+
+.link-btn:hover{
+    border-width: 3px;
 }
