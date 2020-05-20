@@ -16,6 +16,10 @@
         case 'login':
             $clientEmail = filter_input(INPUT_POST, 'email');
             $clientPassword = filter_input(INPUT_POST, 'password');
+
+            echo $clientPassword;
+            echo $clientPassword;
+            exit;
             if(empty($clientEmail)||empty($clientPassword)){
                 $message = '<p>Please provide your email and password.</p>';
                 include '../view/login.php';
@@ -34,7 +38,7 @@
             }
         break;
         case 'register':
-            include '../view/register';
+            include '../view/register.php';
         break;
         default:
             
