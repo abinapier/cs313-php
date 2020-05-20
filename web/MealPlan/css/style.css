@@ -21,6 +21,7 @@ header div{
 }
 header .logo{
     width: 80%;
+    text-align: left;
 }
 header .logo>img{
     max-width: 100%;

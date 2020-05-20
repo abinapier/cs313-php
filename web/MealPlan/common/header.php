@@ -1,6 +1,6 @@
 <div>
     <a class="logo" href="/MealPlan/index.php?action=home" title="MealPlan Homepage"><img src="/MealPlan/images/logo.png" alt="MealPlan Logo"></a>
-    <a class="link-btn" href="/MealPlan/accounts/index.php?action=login" title="Login to MeapPlan account" class="login">Account</a>
+    <div><a class="link-btn" href="/MealPlan/accounts/index.php?action=login" title="Login to MeapPlan account" class="login">Account</a></div>
 </div>
 <nav>
     <ul>
