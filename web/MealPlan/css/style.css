@@ -3,18 +3,21 @@
 body{
     font-family: 'Jost', sans-serif;
 }
-header{
-    background-color: #B0E298;
-    color: white
-}
 
 nav{
     background-color: #1B512D;
 }
 
-nav a{
+header a{
     color: white;
     text-decoration: none;
+}
+
+nav ul{
+    margin:0;
+}
+nav li{
+    list-style: none;
 }
 
 footer{
