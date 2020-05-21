@@ -6,11 +6,11 @@ function login($email, $password){
     {
         if($row['email']==$email && $row['password']==$password){
             $_SESSION["user_id"] = $row['id'];
-            return true;
+            return 1;
         }
     
     }
-    return false;
+    return 0;
 }
 
 function regClient(){

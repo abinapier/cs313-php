@@ -23,7 +23,7 @@
                 exit;
             }
             
-            if(login($clientEmail, $clientPassword)){
+            if(login($clientEmail, $clientPassword)==1){
                 $userName = getName();
                 $message = "<p>Thanks $userName, you are logged in.</p>";
                 include '../view/thank-you.php';
