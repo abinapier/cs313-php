@@ -36,9 +36,12 @@ function register($clientName, $clientEmail, $clientPassword){
     $databaseErrors = $insert_QUERY->errorInfo();
 
     if( !empty($databaseErrors) ){  
-        echo 'Error occurred:'.implode(":",$this->pdo->errorInfo());
+        $errorInfo = print_r($databaseErrors, true); # true flag returns val rather than print
+        $errorLogMsg = "error info: $errorInfo"; # do what you wish with this var, write to log file etc...   
+        echo $errorLogMsg;
         exit;      
     }
+
 }
 
 ?>
