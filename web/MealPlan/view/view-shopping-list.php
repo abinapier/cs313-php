@@ -23,8 +23,8 @@ session_start();
         echo $message;
     }
     echo 'hi!';
-    require_once '../model/shopping-list-model.php';
-    echo getListItems();
+    //require_once '../model/shopping-list-model.php';
+    //echo getListItems();
     ?>
 </main>
 
