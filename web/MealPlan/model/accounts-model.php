@@ -12,6 +12,7 @@ function login($email, $password){
         }
     
     }
+    echo var_export($userFound);
 
     
 }
