@@ -11,6 +11,9 @@
 
     switch ($action){
         case 'account':
+            if (isset($_SESSION['user_id'])) {
+                include '../view/account.php';
+            }
             include '../view/login.php';
         break;
         case 'login':
@@ -34,6 +37,10 @@
                 include '../view/login.php';
                 exit;
             }
+        break;
+        case 'logout':
+            unset($_SESSION['user_id']);
+            include '../view/login.php';
         break;
         case 'register':
             include '../view/register.php';
