@@ -13,6 +13,7 @@
         case 'account':
             if (isset($_SESSION['user_id'])) {
                 include '../view/account.php';
+                exit;
             }
             include '../view/login.php';
         break;
