@@ -12,6 +12,7 @@
     switch ($action){
         case 'view':
             if(isset($_SESSION['user_id'])){
+                $message = getListItems();
                 include '../view/view-shopping-list.php';
                 exit;
             }

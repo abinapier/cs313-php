@@ -22,9 +22,7 @@ session_start();
     if (isset($message)) {
         echo $message;
     }
-    echo 'hi!';
-    //require_once '../model/shopping-list-model.php';
-    //echo getListItems();
+    
     ?>
 </main>
 
