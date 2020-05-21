@@ -18,7 +18,12 @@ session_start();
 
 <main>
     <h1>My Recipes</h1>
-    <p>No recipes yet.</p>
+    <?php
+    if (isset($message)) {
+        echo $message;
+    }
+    ?>
+    
 </main>
 
 <footer>

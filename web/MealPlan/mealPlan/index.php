@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once '../library/connections.php';
     require_once '../model/meal-plan-model.php';
 
@@ -16,7 +17,12 @@
             include '../view/add-meal-plan.php';
         break;
         case 'search':
-            include '../view/search-meal-plans.php';
+            if(isset($_SESSION['user_id'])){
+                include '../view/search-meal-plans.php';
+                exit;
+            }
+            $message = "You must log in before you can access meal plans.";
+            include '../view/login.php';
         break;
         default:
             

@@ -18,7 +18,11 @@ session_start();
 
 <main>
     <h1>My Shopping List</h1>
-    <p>No items on list</p>
+    <?php
+    if (isset($message)) {
+        echo $message;
+    }
+    ?>
 </main>
 
 <footer>

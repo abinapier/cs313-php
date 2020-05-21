@@ -18,7 +18,12 @@ session_start();
 
 <main>
     <h1>My Meal Plans</h1>
-    <p>No meal plans added yet.</p>
+    <?php
+    if (isset($message)) {
+        echo $message;
+    }
+    ?>
+    
 </main>
 
 <footer>

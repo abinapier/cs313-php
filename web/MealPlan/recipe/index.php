@@ -16,7 +16,12 @@
             include '../view/add-recipe.php';
         break;
         case 'search':
-            include '../view/search-recipebox.php';
+            if(isset($_SESSION['user_id'])){
+                include '../view/search-recipebox.php';
+                exit;
+            }
+            $message = "You must log in before you can access your recipes.";
+            include '../view/login.php';
         break;
         default:
             

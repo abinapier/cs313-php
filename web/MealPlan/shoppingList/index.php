@@ -10,7 +10,12 @@
 
     switch ($action){
         case 'view':
-            include '../view/view-shopping-list.php';
+            if(isset($_SESSION['user_id'])){
+                include '../view/view-shopping-list.php';
+                exit;
+            }
+            $message = "You must log in before your shopping list.";
+            include '../view/login.php';
         break;
         default:
             
