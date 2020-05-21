@@ -19,7 +19,11 @@ session_start();
 
 <main>
     <h1>My Account</h1>
-    <p>Hi <?php echo $_SESSION['user_id']?>!</p>
+    <?php
+    if (isset($message)) {
+        echo $message;
+    }
+    ?>
     <a class="link-btn" href="/MealPlan/accounts/index.php?action=logout">Log Out</a>
 </main>
 

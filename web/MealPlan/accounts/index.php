@@ -13,6 +13,7 @@
     switch ($action){
         case 'account':
             if(isset($_SESSION["user_id"])) {
+                $message = "<p>Hi ".getName()."!</p>";
                 include '../view/account.php';
                 exit;
             }
