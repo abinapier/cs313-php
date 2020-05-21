@@ -13,23 +13,37 @@ function login($email, $password){
     return 0;
 }
 
-function regClient(){
-    $db = dbConnect();
-}
 
 function getName(){
     $db = dbConnect();
 
     $userName ="";
-    //foreach ($db->query('SELECT name FROM users WHERE id='.$_SESSION["user_id"]) as $name){
-    //    return $name;
-    //}
-
-
     $statement = $db->query('SELECT name FROM users WHERE id='.$_SESSION["user_id"]);
     $results = $statement->fetchAll(PDO::FETCH_ASSOC);
     return $results[0]['name'];
 
-    //return $userName;
 }
+
+function register($clientName, $clientEmail, $clientPassword){
+    $db = dbConnect();
+    $insert_QUERY = $db->prepare("INSERT INTO users (name, email, password) VALUES (:name, :email, :password)");
+    $insert_QUERY->bindParam(':name', $clientName);
+    $insert_QUERY->bindParam(':email', $clientEmail);
+    $insert_QUERY->bindParam(':password', $clientPassword);
+
+    $insert_QUERY->execute();
+
+    $databaseErrors = $insert_QUERY->errorInfo();
+
+    if( !empty($databaseErrors) ){  
+        $errorInfo = print_r($databaseErrors, true); # true flag returns val rather than print
+        $errorLogMsg = "error info: $errorInfo"; # do what you wish with this var, write to log file etc...   
+        echo $errorLogMsg;
+        exit;      
+    }
+
+    
+
+}
+
 ?>

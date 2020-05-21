@@ -18,7 +18,18 @@ session_start();
 
 <main>
     <h1>Create an Account</h1>
-    <p>content here eventually</p>
+    <?php
+    if (isset($message)) {
+        echo $message;
+    }
+    ?>
+    <form method="post" action="/acme/accounts/index.php">
+        <label>Name:*<input type="text" name="clientName"></label>
+        <label>Email:*<input type="email" name="clientEmail"></label>
+        <label>Password:*<input type="password" name="clientPassword"></label>
+        <input type="submit" value="Create Account">
+        <input type="hidden" name="action" value="register">
+    </form>
 </main>
 
 <footer>
