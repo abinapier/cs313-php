@@ -12,6 +12,8 @@
         }
         $domList.="</ul>";
 
+        echo 'here!';
+        exit;
         echo $domList;
     }
 
