@@ -11,7 +11,8 @@
 
     switch ($action){
         case 'view':
-            $recipeID = $_GET['id'];
+            echo 'hi';
+            $recipeID = filter_input(INPUT_GET, 'id');
             include '../view/view-recipe.php?id='.$recipeID;
         break;
         case 'add':
