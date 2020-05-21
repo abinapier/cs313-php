@@ -1,10 +1,9 @@
 <?php
+    session_start();
     require_once '../library/connections.php';
     require_once '../model/meal-plan-model.php';
     require_once '../model/accounts-model.php';
 
-    
-    session_start();
     
     $action = filter_input(INPUT_POST, 'action');
     if($action == NULL){
