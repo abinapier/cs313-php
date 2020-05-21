@@ -32,13 +32,14 @@
             $ingredientList.="<li>".$row['amount']." ".$row['name']."</li>";
         }
         $ingredientList.="</ul>";
+        return $ingredientList;
         
     }
     function getInstructions($id){
         $db = dbConnect();
         $statement = $db->query('SELECT instructions FROM recipe WHERE id='.$id);
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-        $instruction = "<p>".$results[0]['instruction']."</p";
+        $instruction = "<p>".$results[0]['instructions']."</p>";
 
         return $instruction;
     }
