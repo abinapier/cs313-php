@@ -19,6 +19,7 @@
         break;
         case 'search':
             if(isset($_SESSION['user_id'])){
+                $message = getRecipes();
                 include '../view/search-recipebox.php';
                 exit;
             }
