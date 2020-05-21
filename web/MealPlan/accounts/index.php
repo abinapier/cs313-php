@@ -22,9 +22,9 @@
                 include '../view/login.php';
                 exit;
             }
-            login($clientEmail, $clientPassword);
+            $userFound = login($clientEmail, $clientPassword);
             
-            if($userFound){
+            if($userFound==true){
                 $userName = getName();
                 $message = "<p>Thanks $userName, you are logged in.</p>";
                 include '../view/thank-you.php';
