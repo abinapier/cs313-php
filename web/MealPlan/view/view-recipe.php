@@ -23,7 +23,7 @@ session_start();
         echo $instructions;
     ?>
 
-    <a class="link-btn" href="/acme/recipe?action=search">Back to Recipes</a>
+    <a class="link-btn" href="/acme/recipe/index.php?action=search">Back to Recipes</a>
 </main>
 
 <footer>
