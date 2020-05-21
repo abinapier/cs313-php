@@ -80,3 +80,32 @@ h1{
     color: #347916;
     margin:5px;
 }
+
+main a{
+    color: #45a11d;
+    transition: all .2s ease-in;
+}
+main a:visited{
+    color: #347916;
+}
+main a:hover{
+    color: black;
+}
+
+table, td, th{
+    border: solid 1px black;
+    border-collapse: collapse;
+}
+table{
+    margin:auto;
+}
+td, th{
+    padding:5px 10px;
+}
+thead{
+    background-color: #347916;
+    color: white;
+}
+ul{
+    list-style-position: inside;
+}
