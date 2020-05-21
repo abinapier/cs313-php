@@ -11,7 +11,8 @@
 
     switch ($action){
         case 'view':
-            include '../view/view-recipe.php';
+            $recipeID = $_GET['id'];
+            include '../view/view-recipe.php?id='.$recipeID;
         break;
         case 'add':
             include '../view/add-recipe.php';
