@@ -36,7 +36,7 @@
     }
     function getInstructions($id){
         $db = dbConnect();
-        $statement = $db->query('SELECT instruction FROM recipe WHERE id='.$id);
+        $statement = $db->query('SELECT instructions FROM recipe WHERE id='.$id);
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         $instruction = "<p>".$results[0]['instruction']."</p";
 
