@@ -112,6 +112,7 @@ ul{
 }
 form{
     width: 250px;
+    margin: auto;
 }
 
 form label, input{
@@ -137,5 +138,5 @@ input[type="submit"]{
 }
 
 input[type="submit"]:hover{
-    background-color: #45a11d;
+    background-color: #347916;
 }
