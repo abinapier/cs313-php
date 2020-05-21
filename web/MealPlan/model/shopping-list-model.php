@@ -1,7 +1,7 @@
 <?php
     function getListItems(){
         $db = dbConnect();
-        $statement = $db->query('SELECT id FROM shoppinglist WHERE id='.$_SESSION["user_id"]);
+        $statement = $db->query('SELECT id FROM shoppinglist WHERE user_id='.$_SESSION["user_id"]);
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         $listid = $results[0]['id'];
 
@@ -13,6 +13,7 @@
         $domList.="</ul>";
 
         return $domList;
+        
     }
 
 
