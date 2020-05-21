@@ -13,13 +13,9 @@
         case 'view':
             
             $recipeID = filter_input(INPUT_GET, 'id');
-            echo 'get';
             $name = getRecipeName($recipeID);
-            echo 'name';
             $ingredients = getIngredients($recipeID);
-            echo 'ingredients';
             $instructions = getInstructions($recipeID);
-            echo 'database';
             include '../view/view-recipe.php';
         break;
         case 'add':
