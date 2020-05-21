@@ -20,7 +20,7 @@ session_start();
 <main>
     <h1>My Account</h1>
     <p>Hi <?php echo $_SESSION['user_id']?>!</p>
-    <a class="link-btn" href="/MealPlan/account/index.php?action=logout">Log Out</a>
+    <a class="link-btn" href="/MealPlan/accounts/index.php?action=logout">Log Out</a>
 </main>
 
 <footer>
