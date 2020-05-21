@@ -21,10 +21,15 @@ function getName(){
     $db = dbConnect();
 
     $userName ="";
-    foreach ($db->query('SELECT name FROM users WHERE id=$_SESSION["user_id"]') as $name){
-        return $name;
-    }
+    //foreach ($db->query('SELECT name FROM users WHERE id='.$_SESSION["user_id"]) as $name){
+    //    return $name;
+    //}
 
-    return $userName;
+
+    $statement = $db->query('SELECT name FROM users WHERE id='.$_SESSION["user_id"]);
+    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $results;
+
+    //return $userName;
 }
 ?>
