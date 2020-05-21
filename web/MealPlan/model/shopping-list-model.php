@@ -12,9 +12,7 @@
         }
         $domList.="</ul>";
 
-        echo 'here!';
-        exit;
-        echo $domList;
+        return $domList;
     }
 
 

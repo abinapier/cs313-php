@@ -22,7 +22,7 @@ session_start();
     if (isset($message)) {
         echo $message;
     }
-    getListItems();
+    echo getListItems();
     ?>
 </main>
 
