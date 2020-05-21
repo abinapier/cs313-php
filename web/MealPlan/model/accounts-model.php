@@ -1,20 +1,16 @@
 <?php
 function login($email, $password){
     $db = dbConnect();
-    
-    $userFound = false;
 
     foreach ($db->query('SELECT * FROM users') as $row)
     {
         if($row['email']==$email && $row['password']==$password){
-            $userFound = true;
             $_SESSION["user_id"] = $row['id'];
+            return true;
         }
     
     }
-    return $userFound;
-
-    
+    return false;
 }
 
 function regClient(){
