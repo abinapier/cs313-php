@@ -23,7 +23,7 @@ session_start();
         echo $message;
     }
     ?>
-    <form method="post" action="/acme/accounts/index.php">
+    <form method="post" action="/MealPlan/accounts/index.php">
         <label>Name:*<input type="text" name="clientName"></label>
         <label>Email:*<input type="email" name="clientEmail"></label>
         <label>Password:*<input type="password" name="clientPassword"></label>
