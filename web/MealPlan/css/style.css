@@ -108,4 +108,23 @@ thead{
 }
 ul{
     list-style-position: inside;
+    padding:0;
+}
+form label, input{
+    display:block;
+}
+input{
+    padding:5px;
+}
+input[type="submit"]{
+    background-color: #45a11d;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 25px;
+    transition: all .2s ease-in-out;
+    margin: 5px;
+}
+
+input[type="submit"]:hover{
+    background-color: #45a11d;
 }
