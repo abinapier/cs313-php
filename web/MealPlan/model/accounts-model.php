@@ -30,12 +30,12 @@ function register($clientName, $clientEmail, $clientPassword){
     $insert_QUERY->bindParam(':name', $clientName);
     $insert_QUERY->bindParam(':email', $clientEmail);
     $insert_QUERY->bindParam(':password', $clientPassword);
-
+    echo 'ok';
     $insert_QUERY->execute();
-
+    echo 'test';
     $databaseErrors = $insert_QUERY->errorInfo();
-
-    if( !empty($databaseErrors) ){  
+    echo 'here';
+    if( $databaseErrors[1] != NULL ){  
         $errorInfo = print_r($databaseErrors, true); # true flag returns val rather than print
         $errorLogMsg = "error info: $errorInfo"; # do what you wish with this var, write to log file etc...   
         echo $errorLogMsg;
