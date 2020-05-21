@@ -12,7 +12,8 @@
 
     switch ($action){
         case 'account':
-            if (isset($_SESSION["user_id"])) {
+            print_r($_SESSION);
+            if(isset($_SESSION["user_id"])) {
                 
                 include '../view/account.php';
                 exit;
