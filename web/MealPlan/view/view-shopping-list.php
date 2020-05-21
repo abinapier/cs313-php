@@ -22,6 +22,7 @@ session_start();
     if (isset($message)) {
         echo $message;
     }
+    echo 'hi!';
     echo getListItems();
     ?>
 </main>
