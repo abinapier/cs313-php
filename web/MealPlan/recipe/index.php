@@ -11,11 +11,12 @@
 
     switch ($action){
         case 'view':
-            echo 'hi';
+            
             $recipeID = filter_input(INPUT_GET, 'id');
             $name = getRecipeName($recipeID);
             $ingredients = getIngredients($recipeID);
             $instructions = getInstructions($recipeID);
+            echo 'hi';
             include '../view/view-recipe.php';
         break;
         case 'add':
