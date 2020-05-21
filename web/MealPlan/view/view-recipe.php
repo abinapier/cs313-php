@@ -1,11 +1,7 @@
 <?php
 // Start the session
 session_start();
-require_once '../model/recipe-model.php';
-$id = $_GET['id'];
-$name = getRecipeName($id);
-$ingredients = getIngredients($id);
-$instructions = getInstructions($id);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

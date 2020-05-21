@@ -13,7 +13,10 @@
         case 'view':
             echo 'hi';
             $recipeID = filter_input(INPUT_GET, 'id');
-            include '../view/view-recipe.php';//?id='.$recipeID;
+            $name = getRecipeName($recipeID);
+            $ingredients = getIngredients($recipeID);
+            $instructions = getInstructions($recipeID);
+            include '../view/view-recipe.php';
         break;
         case 'add':
             include '../view/add-recipe.php';
