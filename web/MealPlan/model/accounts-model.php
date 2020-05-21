@@ -28,7 +28,7 @@ function getName(){
 
     $statement = $db->query('SELECT name FROM users WHERE id='.$_SESSION["user_id"]);
     $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-    return $results;
+    return $results[0]['name'];
 
     //return $userName;
 }
