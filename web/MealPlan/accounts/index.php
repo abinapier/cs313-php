@@ -46,7 +46,7 @@
             include '../view/login.php';
         break;
         case 'addAccount':
-            include '../view/login.php';
+            include '../view/registration.php';
         break;
         case 'register':
             $clientName = filter_input(INPUT_POST, 'clientName');
