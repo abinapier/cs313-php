@@ -27,6 +27,7 @@
         break;
         case 'delete':
             echo "delete";
+            exit;
             foreach( $_POST as $key => $val ) {
                 echo "post";
                 $postId = filter_input(INPUT_POST, $key);
