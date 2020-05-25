@@ -52,7 +52,7 @@
             }
             
             addRecipe($recipeName, $instructions, $ingredients, $amounts);
-            //echo 'this will add the recipe';
+            header("Location: /MealPlan/recipe?action=search");
         break;
         case 'edit':
             $message = getRecipeListEdit();
