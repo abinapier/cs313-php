@@ -33,7 +33,7 @@ session_start();
             <input id="addIngredient" type="button" name="addIngredient" value="+ ingredient" onclick="addIngredientEntry()">
         </fieldset>
 
-        <label>Instructions:<textarea></textarea></label>
+        <label>Instructions:<textarea name="instructions"></textarea></label>
         <input type="submit" value="Add Recipe">
         <input type="hidden" name="action" value="insert">
     </form>
