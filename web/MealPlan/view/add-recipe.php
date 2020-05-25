@@ -9,6 +9,7 @@ session_start();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" media="screen" href="/MealPlan/css/style.css">
+    <script src="../js/recipe.js"></script>
 </head>
 <header>
     <?php 
@@ -22,9 +23,9 @@ session_start();
         <label>Recipe Name:<input type="text" name="name"></label>
         <fieldset>
             <legend>Ingredients:</legend>
-            <label>Amount: <input type="text" name="amount1"></label>
-            <label>Name: <input type="text" name="ingredient1"></label>
-            <input type="button" name="addIngredient" value="+ ingredient">
+            <label class="amount">Amount: <input type="text" name="amount1"></label>
+            <label class="ingredient">Name: <input type="text" name="ingredient1"></label>
+            <input id="addIngredient" type="button" name="addIngredient" value="+ ingredient" onclick="addIngredientEntry()">
         </fieldset>
 
         <label>Instructions:<textarea></textarea></label>
