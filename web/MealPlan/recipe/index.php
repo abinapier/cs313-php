@@ -27,12 +27,9 @@
         break;
         case 'delete':
             foreach( $_POST as $key => $val ) {
-                echo "post";
                 $postId = filter_input(INPUT_POST, $key);
                 if( strpos($key, 'recipe') !== false) {
-                    echo "recipe";
                     if(isset($_POST[$key])){
-                        echo "checked";
                         deleteRecipe($postId);
                     }
                 } 
