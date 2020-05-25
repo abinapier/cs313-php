@@ -29,7 +29,10 @@
             foreach( $_POST as $key => $val ) {
                 $postId = filter_input(INPUT_POST, $key);
                 if( strpos($key, 'recipe') !== false) {
-                    deleteRecipe($postId);
+                    if(isset($_POST[$key])){
+                        echo "checked";
+                        deleteRecipe($postId);
+                    }
                 } 
             }
             include '../view/search-recipebox.php';
