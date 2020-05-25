@@ -35,17 +35,22 @@
 
     function deleteRecipe($id){
         $db = dbConnect();
+        foreach ($db->query('SELECT recipe_one_id, recipe_two_id, recipe_three_id, recipe_four_id, recipe_five_id FROM menu WHERE user_id='.$_SESSION['user_id']) as $row){
+            if($row['recipe_one_id']==$id ||$row['recipe_two_id']==$id ||$row['recipe_three_id']==$id ||$row['recipe_four_id']==$id ||$row['recipe_five_id']==$id){
+                return 'Cannot delete recipe(s). It is part of a meal plan. Please delete any meal plans that include the recipe before you can delete the recipes.'; 
+            }
+        }
         foreach ($db->query('SELECT id FROM ingredient WHERE recipe_id='.$id) as $row)
         {
             deleteIngredients($row['id']);   
         }
-        echo "ingredients gone";
+        
         $insert_QUERY = $db->prepare("DELETE FROM recipe WHERE id=:id");
-        echo "query";
+        
         $insert_QUERY->bindParam(':id', $id);
-        echo "bind";
+        
         $insert_QUERY->execute();
-        echo "recipe gone";
+        return '';
 
     }
 

@@ -30,11 +30,15 @@
                 $postId = filter_input(INPUT_POST, $key);
                 if( strpos($key, 'recipe') !== false) {
                     if(isset($_POST[$key])){
-                        deleteRecipe($postId);
+                        $message = deleteRecipe($postId);
+                        if($message != ''){
+                            include '../view/edit-recipe-list.php';
+                            exit;
+                        }
                     }
                 } 
             }
-            include '../view/search-recipebox.php';
+            header("Location: /MealPlan/recipe?action=search");
         break;
         case 'search':
             if(isset($_SESSION['user_id'])){
