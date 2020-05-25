@@ -26,7 +26,13 @@
             include '../view/edit-recipe-list.php';
         break;
         case 'delete':
-            
+            foreach( $_POST as $key => $val ) {
+                $postId = filter_input(INPUT_POST, $key);
+                if( strpos($key, 'recipe') !== false) {
+                    deleteRecipe($postId);
+                } 
+            }
+            include '../view/search-recipebox.php';
         break;
         case 'search':
             if(isset($_SESSION['user_id'])){

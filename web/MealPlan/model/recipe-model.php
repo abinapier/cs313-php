@@ -34,6 +34,15 @@
         return $domList;
     }
 
+    function deleteRecipe($id){
+        $db = dbConnect();
+        $insert_QUERY = $db->prepare("DELETE FROM recipe WHERE id=:id");
+        $insert_QUERY->bindParam(':id', $id);
+        $insert_QUERY->execute();
+
+    }
+
+
     function getRecipeName($id){
         $db = dbConnect();
         $statement = $db->query('SELECT name FROM recipe WHERE id='.$id);
