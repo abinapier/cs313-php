@@ -23,6 +23,9 @@ session_start();
         echo $message;
     }
     ?>
+
+    <a href="/MealPlan/view/recipe?action=add" title="Add a new recipe" class="btn-link">Add a New Recipe</a>
+    <a href="/MealPlan/view/recipe?action=delete" title="Edit your Recipe List" class="btn-link">Edit Recipe List</a>
     
 </main>
 
