@@ -19,6 +19,18 @@
             $message = "You must log in before your shopping list.";
             include '../view/login.php';
         break;
+        case 'edit':
+            include '../view/remove-items-shopping-list.php';
+        break;
+        case 'delete':
+
+        break;
+        case 'add':
+            include '../view/add-items-shopping-list.php';
+        break;
+        case 'update':
+
+        break;
         default:
             
     }
