@@ -41,7 +41,9 @@
         }
         echo "ingredients gone";
         $insert_QUERY = $db->prepare("DELETE FROM recipe WHERE id=:id");
+        echo "query";
         $insert_QUERY->bindParam(':id', $id);
+        echo "bind";
         $insert_QUERY->execute();
         echo "recipe gone";
 
