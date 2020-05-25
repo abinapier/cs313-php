@@ -107,7 +107,9 @@
         
         foreach($amountArray as $key=>$amount){
             $ingredientName = $ingredientArray[$key];
+            echo $amount;
             echo $ingredientName;
+            echo $newId;
             $ingredient_QUERY = $db->prepare("INSERT INTO ingredient (name, amount, recipe_id) VALUES (:name, :amount, :recipe_id)");
             $ingredient_QUERY->bindParam(':name', $ingredientName);
             $ingredient_QUERY->bindParam(':amount', $amount);
