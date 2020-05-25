@@ -37,16 +37,20 @@
                 $nameVal = filter_input(INPUT_POST, $key);
                 $value = filter_input(INPUT_POST, $val);
                 if( strpos($nameVal, 'amount') !== false) {
+                    echo "ingredient amount!";
                     if(!empty($value)){
                         $amounts[] = $value;
                     }
                 } 
                 if( strpos($nameVal, 'ingredient') !== false) {
+                    echo "ingredient name!";
                     if(!empty($value)){
                         $ingredients[] = $value;
                     }
                 } 
             }
+            print_r($amounts);
+            print_r($ingredients);
             addRecipe($recipeName, $instructions, $amounts, $ingredients);
             //echo 'this will add the recipe';
         break;
