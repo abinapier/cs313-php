@@ -48,7 +48,7 @@
                 } 
             }
             addRecipe($name, $instructions, $amount, $ingredients);
-            echo 'this will add the recipe';
+            //echo 'this will add the recipe';
         break;
         case 'edit':
             $message = getRecipeListEdit();
