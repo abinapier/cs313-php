@@ -35,7 +35,7 @@
             $ingredients = array();
             print_r($_POST);
             foreach( $_POST as $key => $val ) {
-                $value = filter_input(INPUT_POST, $val);
+                $value = filter_input(INPUT_POST, $key);
                 echo $value;
                 if( strpos($key, 'amount') !== false) {
                     echo "ingredient amount!";
