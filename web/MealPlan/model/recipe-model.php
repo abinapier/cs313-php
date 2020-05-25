@@ -27,7 +27,7 @@
         {
             $domList.="<label>".$row['name']."<input type='checkbox' name='recipe".$row['id']."' value='".$row['id']."'></label>";    
         }
-        $domList.="<input type='text' name='action' value='delete'>">
+        $domList.="<input type='hidden' name='action' value='delete'>";
         $domList.="<input type='submit' value='Delete Recipes'>";
         $domList.="</form>";
         return $domList;
