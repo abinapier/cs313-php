@@ -44,9 +44,11 @@
         case 'logout':
             unset($_SESSION['user_id']);
             include '../view/login.php';
+            exit;
         break;
         case 'addAccount':
             include '../view/registration.php';
+            exit;
         break;
         case 'register':
             $clientName = filter_input(INPUT_POST, 'clientName');
