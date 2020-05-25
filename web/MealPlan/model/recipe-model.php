@@ -104,6 +104,9 @@
         $insert_QUERY->bindParam(':recipebox_id', $boxid);
         $insert_QUERY->execute();
         $newId = $db->lastInsertId();
+        echo "new recipe!";
+        print_r($ingredientArray);
+        print_r($amountArray);
         
         foreach($amountArray as $key=>$amount){
             $ingredientName = $ingredientArray[$key];
