@@ -25,7 +25,7 @@
         $domList = "<form method='post' action='/MealPlan/recipe/index.php'>";
         foreach ($db->query('SELECT name, id FROM recipe WHERE recipebox_id='.$boxid) as $row)
         {
-            $domList.="<label>".$row['name']."<input type='checkbox' name='".$row['id']."' value='".$row['id']."'></label>";    
+            $domList.="<label>".$row['name']."<input type='checkbox' name='recipe".$row['id']."' value='".$row['id']."'></label>";    
         }
         $domList.="<input type='submit' value='Delete Recipes'>";
         $domList.="<input type='hidden' name='action' value='delete'">
