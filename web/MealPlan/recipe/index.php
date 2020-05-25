@@ -21,6 +21,9 @@
         case 'add':
             include '../view/add-recipe.php';
         break;
+        case 'edit':
+            include '../view/edit-recipe-list.php';
+        break;
         case 'search':
             if(isset($_SESSION['user_id'])){
                 $message = getRecipes();
