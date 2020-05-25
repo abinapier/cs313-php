@@ -19,6 +19,11 @@ session_start();
 
 <main>
     <h1>Add a New Recipe</h1>
+    <?php
+    if (isset($message)) {
+        echo $message;
+    }
+    ?>
     <form method="post" action="/MealPlan/recipe/index.php">
         <label>Recipe Name:<input type="text" name="name"></label>
         <fieldset id="ingredientArea">

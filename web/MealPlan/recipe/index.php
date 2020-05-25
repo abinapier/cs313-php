@@ -22,6 +22,26 @@
             include '../view/add-recipe.php';
         break;
         case 'insert':
+            $recipeName = filter_input(INPUT_POST, 'name');
+            $amountOne = filter_input(INPUT_POST, 'amount1');
+            $ingredientOne = filter_input(INPUT_POST, 'ingredient1');
+            $instructions = filter_input(INPUT_POST, 'instructions');
+            if(empty($recipeName) || empty($amountOne) || empty($ingredientOne) || empty($instructions)){
+                $message = '<p>Please provide information for all empty form fields.</p>';
+                include '../view/add-recipe.php';
+                exit; 
+            }
+            $ingredients = array();
+            foreach( $_POST as $key => $val ) {
+                $name = filter_input(INPUT_POST, $key);
+                $value = filter_input(INPUT_POST, $val);
+                if( strpos($name, 'amount') !== false) {
+                    if(!empty($value)){
+                        $ingredients[$name] = $value;
+                    }
+                } 
+            }
+            
             echo 'this will add the recipe';
         break;
         case 'edit':

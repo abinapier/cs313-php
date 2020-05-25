@@ -90,4 +90,21 @@
 
         return $instruction;
     }
+
+    function addRecipe($name, $ingredientArray, $instructions){
+        //get recipebox id for user.
+        $db = dbConnect();
+        $statement = $db->query('SELECT id FROM recipebox WHERE user_id='.$_SESSION["user_id"]);
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $boxid = $results[0]['id'];
+
+        $insert_QUERY = $db->prepare("INSERT INTO recipe (name, instructions, recipebox_id) VALUES (:name, :instructions, :recipebox_id)");
+        $insert_QUERY->bindParam(':name', $name);
+        $insert_QUERY->bindParam(':instructions', $instructions);
+        $insert_QUERY->bindParam(':recipebox_id', $boxid);
+        $insert_QUERY->execute();
+        $newId = $db->lastInsertId();
+        echo $newId;
+
+    }
 ?>
