@@ -21,6 +21,9 @@
         case 'add':
             include '../view/add-recipe.php';
         break;
+        case 'insert':
+            echo 'this will add the recipe';
+        break;
         case 'edit':
             $message = getRecipeListEdit();
             include '../view/edit-recipe-list.php';

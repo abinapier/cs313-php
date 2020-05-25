@@ -18,7 +18,19 @@ session_start();
 
 <main>
     <h1>Add a New Recipe</h1>
-    <p>content here eventually</p>
+    <form method="post" action="/MealPlan/recipe/index.php">
+        <label>Recipe Name:<input type="text" name="name"></label>
+        <fieldset>
+            <legend>Ingredients:</legend>
+            <label>Amount: <input type="text" name="amount1"></label>
+            <label>Name: <input type="text" name="ingredient1"></label>
+            <input type="button" name="addIngredient" value="+ ingredient">
+        </fieldset>
+
+        <label>Instructions:<textarea></textarea></label>
+        <input type="submit" value="Add Recipe">
+        <input type="hidden" name="action" value="insert">
+    </form>
 </main>
 
 <footer>
