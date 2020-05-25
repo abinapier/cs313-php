@@ -8,7 +8,7 @@
     if($action == NULL){
         $action = filter_input(INPUT_GET, 'action');
     }
-    echo $action;
+    
     switch ($action){
         case 'view':
             
@@ -26,8 +26,6 @@
             include '../view/edit-recipe-list.php';
         break;
         case 'delete':
-            echo "delete";
-            exit;
             foreach( $_POST as $key => $val ) {
                 echo "post";
                 $postId = filter_input(INPUT_POST, $key);
