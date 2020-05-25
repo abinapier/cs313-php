@@ -13,6 +13,35 @@
         
     }
 
+    function getMealPlanListEdit(){
+        $db = dbConnect();
+
+        $domList = "<form method='post' action='/MealPlan/mealPlan/index.php'>";
+        foreach ($db->query('SELECT date, id FROM menu WHERE user_id='.$_SESSION['user_id']) as $row)
+        {
+            $domList.="<label>".$row['date']."<input type='checkbox' name='menu".$row['id']."' value='".$row['id']."'></label>"; 
+        }
+        $domList.="<input type='hidden' name='action' value='delete'>";
+        $domList.="<input type='submit' value='Delete Meal Plans'>";
+        $domList.="</form>";
+
+        return $domList;
+
+    }
+
+    function deleteMenu($id){
+        $db = dbConnect();
+        
+        
+        $insert_QUERY = $db->prepare("DELETE FROM menu WHERE id=:id");
+        
+        $insert_QUERY->bindParam(':id', $id);
+        
+        $insert_QUERY->execute();
+
+    }
+
+
     function getMealPlanDate($id){
         $db = dbConnect();
         $statement = $db->query('SELECT date FROM menu WHERE id='.$id);

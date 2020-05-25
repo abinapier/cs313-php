@@ -52,8 +52,19 @@
             header("Location: /MealPlan/mealPlan/index.php?action=search");
         break;
         case 'edit':
+            $message = getMealPlanListEdit();
+            include '../view/edit-meal-plan-list.php';
         break;
         case 'delete':
+            foreach( $_POST as $key => $val ) {
+                $postId = filter_input(INPUT_POST, $key);
+                if( strpos($key, 'menu') !== false) {
+                    if(isset($_POST[$key])){
+                        deleteMenu($postId);
+                    }
+                } 
+            }
+            header("Location: /MealPlan/mealPlan?action=search");
         break;
         case 'search':
             if(isset($_SESSION['user_id'])){
