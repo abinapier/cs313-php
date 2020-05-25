@@ -35,18 +35,15 @@
             $ingredients = array();
             print_r($_POST);
             foreach( $_POST as $key => $val ) {
-                echo $key."<br>";
-                $nameVal = filter_input(INPUT_POST, $key);
-                echo $nameVal;
                 $value = filter_input(INPUT_POST, $val);
                 echo $value;
-                if( strpos($nameVal, 'amount') !== false) {
+                if( strpos($key, 'amount') !== false) {
                     echo "ingredient amount!";
                     if(!empty($value)){
                         $amounts[] = $value;
                     }
                 } 
-                if( strpos($nameVal, 'ingredient') !== false) {
+                if( strpos($key, 'ingredient') !== false) {
                     echo "ingredient name!";
                     if(!empty($value)){
                         $ingredients[] = $value;
