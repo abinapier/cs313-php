@@ -25,23 +25,29 @@ function getName(){
 }
 
 function register($clientName, $clientEmail, $clientPassword){
-    $db = dbConnect();
-    $insert_QUERY = $db->prepare("INSERT INTO users (name, email, password) VALUES (:name, :email, :password)");
-    $insert_QUERY->bindParam(':name', $clientName);
-    $insert_QUERY->bindParam(':email', $clientEmail);
-    $insert_QUERY->bindParam(':password', $clientPassword);
-    echo 'ok';
-    $insert_QUERY->execute();
-    echo 'test';
-    $databaseErrors = $insert_QUERY->errorInfo();
-    echo 'here';
-    if( $databaseErrors[1] != NULL ){  
-        $errorInfo = print_r($databaseErrors, true); # true flag returns val rather than print
-        $errorLogMsg = "error info: $errorInfo"; # do what you wish with this var, write to log file etc...   
-        echo $errorLogMsg;
-        exit;      
-    }
 
+    $db = dbConnect();
+    $emailValid = true;
+
+    foreach ($db->query('SELECT email FROM users') as $row)
+    {
+        if($row['email']==$clientEmail){
+            $_SESSION["user_id"] = $row['id'];
+            $emailValid = false;
+        }
+    
+    }
+    
+    if ($emailValid){
+        $insert_QUERY = $db->prepare("INSERT INTO users (name, email, password) VALUES (:name, :email, :password)");
+        $insert_QUERY->bindParam(':name', $clientName);
+        $insert_QUERY->bindParam(':email', $clientEmail);
+        $insert_QUERY->bindParam(':password', $clientPassword);
+        $insert_QUERY->execute();
+        return 1;
+    }
+    return 0;
 }
+
 
 ?>
