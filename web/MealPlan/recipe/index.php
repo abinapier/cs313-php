@@ -8,7 +8,7 @@
     if($action == NULL){
         $action = filter_input(INPUT_GET, 'action');
     }
-
+    echo $action;
     switch ($action){
         case 'view':
             
