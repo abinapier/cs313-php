@@ -36,10 +36,24 @@
 
     function deleteRecipe($id){
         $db = dbConnect();
+        foreach ($db->query('SELECT id FROM ingredient WHERE recipe_id='.$id) as $row)
+        {
+            deleteIngredients($row['id']);   
+        }
+
         $insert_QUERY = $db->prepare("DELETE FROM recipe WHERE id=:id");
         $insert_QUERY->bindParam(':id', $id);
         $insert_QUERY->execute();
 
+    }
+
+    function deleteIngredients($id){
+        $db = dbConnect();
+        
+
+        $insert_QUERY = $db->prepare("DELETE FROM ingredient WHERE id=:id");
+        $insert_QUERY->bindParam(':id', $id);
+        $insert_QUERY->execute();
     }
 
 
