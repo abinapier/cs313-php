@@ -35,6 +35,7 @@
             $ingredients = array();
             print_r($_POST);
             foreach( $_POST as $key => $val ) {
+                echo $key."<br>";
                 $nameVal = filter_input(INPUT_POST, $key);
                 echo $nameVal;
                 $value = filter_input(INPUT_POST, $val);
