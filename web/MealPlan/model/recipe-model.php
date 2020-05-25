@@ -22,7 +22,7 @@
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         $boxid = $results[0]['id'];
 
-        $domList = "<form target='/MealPlan/recipe/index.php' method='post'>";
+        $domList = "<form method='post' action='/MealPlan/recipe/index.php'>";
         foreach ($db->query('SELECT name, id FROM recipe WHERE recipebox_id='.$boxid) as $row)
         {
             $domList.="<label>".$row['name']."<input type='checkbox' name='".$row['id']."' value='".$row['id']."'></label>";    
