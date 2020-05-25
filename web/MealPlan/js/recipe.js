@@ -7,6 +7,6 @@ function addIngredientEntry(){
     cloneAmount.firstChild.value = '';
     cloneIngredient.firstChild.value = '';
 
-    addButton.insertBefore(cloneAmount);
-    addButton.insertBefore(cloneIngredient);
+    addButton.insertBefore(cloneAmount, addButton);
+    addButton.insertBefore(cloneIngredient, addButton);
 }
