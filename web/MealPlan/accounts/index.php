@@ -66,7 +66,7 @@
                 include '../view/login.php';
                 exit;
             }else{
-                $message = "<p> Sorry $clientFirstname, but the registration failed. There is already an account with that email. Please try again.</p>";
+                $message = "<p> Sorry, but the registration failed. There is already an account with that email. Please try again.</p>";
                 include '../view/register.php';
                 exit;
             }
