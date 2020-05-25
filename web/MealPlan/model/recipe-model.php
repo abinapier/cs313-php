@@ -91,7 +91,7 @@
         return $instruction;
     }
 
-    function addRecipe($name, $ingredientArray, $instructions){
+    function addRecipe($name, $instructions, $ingredientArray, $amountArray){
         //get recipebox id for user.
         $db = dbConnect();
         $statement = $db->query('SELECT id FROM recipebox WHERE user_id='.$_SESSION["user_id"]);
@@ -104,7 +104,15 @@
         $insert_QUERY->bindParam(':recipebox_id', $boxid);
         $insert_QUERY->execute();
         $newId = $db->lastInsertId();
-        echo $newId;
+        
+        foreach($amountArray as $key=>$amount){
+            $ingredientName = $ingredientArray[$key];
+            $ingredient_QUERY = $db->prepare("INSERT INTO ingredient (name, amount, recipe_id) VALUES (:name, :amount, :recipe_id)");
+            $ingredient_QUERY->bindParam(':name', $ingredientName);
+            $ingredient_QUERY->bindParam(':amount', $amount);
+            $ingredient_QUERY->bindParam(':recipe_id', $newId);
+            $insert_QUERY->execute();
+        }
 
     }
 ?>

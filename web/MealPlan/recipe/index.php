@@ -31,17 +31,23 @@
                 include '../view/add-recipe.php';
                 exit; 
             }
+            $amounts = array();
             $ingredients = array();
             foreach( $_POST as $key => $val ) {
                 $name = filter_input(INPUT_POST, $key);
                 $value = filter_input(INPUT_POST, $val);
                 if( strpos($name, 'amount') !== false) {
                     if(!empty($value)){
-                        $ingredients[$name] = $value;
+                        $amounts[] = $value;
+                    }
+                } 
+                if( strpos($name, 'ingredient') !== false) {
+                    if(!empty($value)){
+                        $ingredients[] = $value;
                     }
                 } 
             }
-            addRecipe($name, $value, $ingredients);
+            addRecipe($name, $instructions, $amount, $ingredients);
             echo 'this will add the recipe';
         break;
         case 'edit':
