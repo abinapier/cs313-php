@@ -7,10 +7,10 @@ function addIngredientEntry(){
     let ingredientInput = document.getElementsByClassName("ingredient")[0];
     let cloneAmount = amountInput.cloneNode(true);
     let cloneIngredient = ingredientInput.cloneNode(true);
-    cloneAmount.firstChild.value = '';
-    cloneIngredient.firstChild.value = '';
-    cloneAmount.firstChild.name= "amount"+count;
-    cloneIngredient.firstChild.name= "ingredient"+count;
+    cloneAmount.children[1].value = '';
+    cloneIngredient.children[1].value = '';
+    cloneAmount.children[1].name= "amount"+count;
+    cloneIngredient.children[1].name= "ingredient"+count;
 
     let ingredientArea = document.getElementById("ingredientArea");
 
