@@ -34,14 +34,14 @@
             $amounts = array();
             $ingredients = array();
             foreach( $_POST as $key => $val ) {
-                $name = filter_input(INPUT_POST, $key);
+                $nameVal = filter_input(INPUT_POST, $key);
                 $value = filter_input(INPUT_POST, $val);
-                if( strpos($name, 'amount') !== false) {
+                if( strpos($nameVal, 'amount') !== false) {
                     if(!empty($value)){
                         $amounts[] = $value;
                     }
                 } 
-                if( strpos($name, 'ingredient') !== false) {
+                if( strpos($nameVal, 'ingredient') !== false) {
                     if(!empty($value)){
                         $ingredients[] = $value;
                     }
