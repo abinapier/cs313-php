@@ -33,26 +33,25 @@
             }
             $amounts = array();
             $ingredients = array();
-            print_r($_POST);
+            
             foreach( $_POST as $key => $val ) {
                 $value = filter_input(INPUT_POST, $key);
-                echo $value;
+                
                 if( strpos($key, 'amount') !== false) {
-                    echo "ingredient amount!";
+                    
                     if(!empty($value)){
                         $amounts[] = $value;
                     }
                 } 
                 if( strpos($key, 'ingredient') !== false) {
-                    echo "ingredient name!";
+                    
                     if(!empty($value)){
                         $ingredients[] = $value;
                     }
                 } 
             }
-            print_r($amounts);
-            print_r($ingredients);
-            addRecipe($recipeName, $instructions, $amounts, $ingredients);
+            
+            addRecipe($recipeName, $instructions, $ingredients, $amounts);
             //echo 'this will add the recipe';
         break;
         case 'edit':
