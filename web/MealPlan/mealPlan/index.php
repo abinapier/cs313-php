@@ -35,6 +35,22 @@
             $recipeSelect = getRecipeSelect();
             include '../view/add-meal-plan.php';
         break;
+        case 'verify':
+            $date = filter_input(INPUT_POST, 'date');
+            $dayOne = filter_input(INPUT_POST, 'dayOne');
+            $dayTwo = filter_input(INPUT_POST, 'dayTwo');
+            $dayThree = filter_input(INPUT_POST, 'dayThree');
+            $dayFour = filter_input(INPUT_POST, 'dayFour');
+            $dayFive = filter_input(INPUT_POST, 'dayFive');
+
+            if(empty($date) || empty($dayOne) || empty($dayTwo) || empty($dayThree) || empty($dayFour) || empty($dayFive)){
+                $message = '<p>Please provide information for all empty form fields.</p>';
+                include '../view/add-meal-plan.php';
+                exit; 
+            }
+            addMealPlan($date, $dayOne, $dayTwo, $dayThree, $dayFour, $dayFive);
+            header("Location: /MealPlan/mealPlan/index.php?action=search");
+        break;
         case 'edit':
         break;
         case 'delete':

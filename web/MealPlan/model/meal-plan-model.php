@@ -32,4 +32,17 @@
 
     }
 
+    function addMealPlan($date, $dayOneId, $dayTwoId, $dayThreeId, $dayFourId, $dayFiveId){
+        $db = dbConnect();
+        $insert_QUERY = $db->prepare("INSERT INTO menu (date, user_id, recipe_one_id, recipe_two_id, recipe_three_id, recipe_four_id, recipe_five_id) VALUES (:date, :user_id, :recipe_one_id, :recipe_two_id, :recipe_three_id, :recipe_four_id, :recipe_five_id)");
+        $insert_QUERY->bindParam(':date', $date);
+        $insert_QUERY->bindParam(':user_id', $_SESSION['user_id']);
+        $insert_QUERY->bindParam(':recipe_one_id', $dayOneId);
+        $insert_QUERY->bindParam(':recipe_two_id', $dayTwoId);
+        $insert_QUERY->bindParam(':recipe_three_id', $dayThreeId);
+        $insert_QUERY->bindParam(':recipe_four_id', $dayFourId);
+        $insert_QUERY->bindParam(':recipe_five_id', $dayFiveId);
+        $insert_QUERY->execute();
+    }
+
 ?>

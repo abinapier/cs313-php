@@ -18,6 +18,11 @@ session_start();
 
 <main>
     <h1>Create a New Meal Plan</h1>
+    <?php
+    if (isset($message)) {
+        echo $message;
+    }
+    ?>
     <form method='post' action="/MealPlan/mealPlan/index.php">
     <label> Date: <input type="date" name="date"></label>
     <table>
@@ -40,6 +45,8 @@ session_start();
             </tr>
         </tbody>
     </table>
+    <input type="hidden" name="action" value="verify">
+    <input type="submit" value="Add Meal Plan">
     </form>
 </main>
 
