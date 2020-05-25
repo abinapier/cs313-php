@@ -7,6 +7,8 @@ function addIngredientEntry(){
     cloneAmount.firstChild.value = '';
     cloneIngredient.firstChild.value = '';
 
-    addButton.insertBefore(cloneAmount, addButton);
-    addButton.insertBefore(cloneIngredient, addButton);
+    let ingredientArea = document.getElementById("ingredientArea");
+
+    ingredientArea.insertBefore(cloneAmount, addButton);
+    ingredientArea.insertBefore(cloneIngredient, addButton);
 }

@@ -21,7 +21,7 @@ session_start();
     <h1>Add a New Recipe</h1>
     <form method="post" action="/MealPlan/recipe/index.php">
         <label>Recipe Name:<input type="text" name="name"></label>
-        <fieldset>
+        <fieldset id="ingredientArea">
             <legend>Ingredients:</legend>
             <label class="amount">Amount: <input type="text" name="amount1"></label>
             <label class="ingredient">Name: <input type="text" name="ingredient1"></label>
