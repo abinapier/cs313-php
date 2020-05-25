@@ -47,7 +47,7 @@
             exit;
         break;
         case 'addAccount':
-            include '../view/registration.php';
+            include '../view/register.php';
             exit;
         break;
         case 'register':
@@ -67,7 +67,7 @@
                 exit;
             }else{
                 $message = "<p> Sorry $clientFirstname, but the registration failed. There is already an account with that email. Please try again.</p>";
-                include '../view/registration.php';
+                include '../view/register.php';
                 exit;
             }
             include '../view/register.php';
