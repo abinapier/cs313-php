@@ -16,6 +16,22 @@
         
     }
 
+    function getRecipeSelect(){
+        $db = dbConnect();
+        $statement = $db->query('SELECT id FROM recipebox WHERE user_id='.$_SESSION["user_id"]);
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $boxid = $results[0]['id'];
+
+        
+        foreach ($db->query('SELECT name, id FROM recipe WHERE recipebox_id='.$boxid) as $row)
+        {
+            $domList.="<option value='".$row['id']."'>".$row['name']."</option>";   
+        }
+        
+
+        return $domList;
+    }
+
     function getRecipeListEdit(){
         $db = dbConnect();
         $statement = $db->query('SELECT id FROM recipebox WHERE user_id='.$_SESSION["user_id"]);

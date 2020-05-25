@@ -32,7 +32,12 @@
             include '../view/view-meal-plan.php';
         break;
         case 'add':
+            $recipeSelect = getRecipeSelect();
             include '../view/add-meal-plan.php';
+        break;
+        case 'edit':
+        break;
+        case 'delete':
         break;
         case 'search':
             if(isset($_SESSION['user_id'])){

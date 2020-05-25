@@ -18,7 +18,29 @@ session_start();
 
 <main>
     <h1>Create a New Meal Plan</h1>
-    <p>Content here eventually.</p>
+    <form method='post' action="/MealPlan/mealPlan/index.php">
+    <label> Date: <input type="date" name="date"></label>
+    <table>
+        <thead>
+            <tr>
+                <th>Day 1</th>
+                <th>Day 2</th>
+                <th>Day 3</th>
+                <th>Day 4</th>
+                <th>Day 5</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><?php echo '<select name="dayOne">'.$recipeSelect.'</select>';?></td>
+                <td><?php echo '<select name="dayTwo">'.$recipeSelect.'</select>';?></td>
+                <td><?php echo '<select name="dayThree">'.$recipeSelect.'</select>';?></td>
+                <td><?php echo '<select name="dayFour">'.$recipeSelect.'</select>';?></td>
+                <td><?php echo '<select name="dayFive">'.$recipeSelect.'</select>';?></td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
 </main>
 
 <footer>
