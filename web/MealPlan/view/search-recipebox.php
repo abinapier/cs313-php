@@ -25,7 +25,7 @@ session_start();
     ?>
 
     <a href="/MealPlan/view/recipe?action=add" title="Add a new recipe" class="link-btn">Add a New Recipe</a>
-    <a href="/MealPlan/view/recipe?action=delete" title="Edit your Recipe List" class="link-btn">Edit Recipe List</a>
+    <a href="/MealPlan/view/recipe?action=edit" title="Edit your Recipe List" class="link-btn">Edit Recipe List</a>
     
 </main>
 

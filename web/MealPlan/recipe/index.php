@@ -22,7 +22,11 @@
             include '../view/add-recipe.php';
         break;
         case 'edit':
+            $message = getRecipeListEdit();
             include '../view/edit-recipe-list.php';
+        break;
+        case 'delete':
+            
         break;
         case 'search':
             if(isset($_SESSION['user_id'])){
