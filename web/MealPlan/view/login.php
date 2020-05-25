@@ -30,7 +30,7 @@ session_start();
         <input type="hidden" name="action" value="login">
     </form>
 
-    <a href="/MealPlan/accounts/index.php?action=register" title="Create a new account" class="link-btn">Create a New Account</a>
+    <a href="/MealPlan/accounts/index.php?action=addAccount" title="Create a new account" class="link-btn">Create a New Account</a>
 </main>
 
 <footer>

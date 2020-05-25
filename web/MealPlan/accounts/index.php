@@ -45,6 +45,9 @@
             unset($_SESSION['user_id']);
             include '../view/login.php';
         break;
+        case 'addAccount':
+            include '../view/login.php';
+        break;
         case 'register':
             $clientName = filter_input(INPUT_POST, 'clientName');
             $clientEmail = filter_input(INPUT_POST, 'clientEmail');
