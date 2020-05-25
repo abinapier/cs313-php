@@ -41,7 +41,7 @@
                     }
                 } 
             }
-            
+            addRecipe($name, $value, $ingredients);
             echo 'this will add the recipe';
         break;
         case 'edit':
