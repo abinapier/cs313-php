@@ -24,7 +24,14 @@
             include '../view/remove-items-shopping-list.php';
         break;
         case 'delete':
-
+            foreach( $_POST as $key => $val ) {
+                if( strpos($key, 'ingredient') !== false) {
+                    if(isset($_POST[$key])){
+                        removeIngredientFromList($_POST[$key]);
+                    }
+                } 
+            }
+            header("Location: /MealPlan/shoppingList?action=view");
         break;
         case 'add':
             $mealPlanSelect = getMealPlanSelect();
@@ -37,7 +44,6 @@
             include '../view/add-items-shopping-list.php';
         break;
         case 'update':
-            print_r($_POST);
             foreach( $_POST as $key => $val ) {
                 if( strpos($key, 'ingredient') !== false) {
                     if(isset($_POST[$key])){

@@ -36,16 +36,45 @@
     }
 
     function addIngredientToList($id){
-        echo "adding ingredient";
-        echo $id;
+        
+        
         $db = dbConnect();
         $statement = $db->query('SELECT id FROM shoppinglist WHERE user_id='.$_SESSION["user_id"]);
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         $listid = $results[0]['id'];
-        echo $listid;
+        
         $updateStatement = $db->prepare('UPDATE ingredient SET shoppinglist_id='.$listid.'WHERE id=:id');
         $updateStatement->bindParam(':id', $id);
         $updateStatement->execute();
+    }
+
+
+    function removeIngredientToList($id){
+        
+        $db = dbConnect();
+        
+        $updateStatement = $db->prepare('UPDATE ingredient SET shoppinglist_id=NULL WHERE id=:id');
+        $updateStatement->bindParam(':id', $id);
+        $updateStatement->execute();
+    }
+
+    function getIngredientsEdit($menuId){
+        $db = dbConnect();
+        $statement = $db->query('SELECT id FROM shoppinglist WHERE user_id='.$_SESSION["user_id"]);
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $listid = $results[0]['id'];
+
+        $domList = "<form method='post' action='/MealPlan/shoppingList/index.php'>";
+        foreach ($db->query('SELECT name, id FROM ingredient WHERE shoppinglist_id='.$listid) as $row)
+        {
+            $domList.="<label>".$row['name']."<input type='checkbox' name='ingredient".$row['id']."' value='".$row['id']."'></label>";    
+        }
+        $domList.="<input type='hidden' name='action' value='delete'>";
+        $domList.="<input type='submit' value='Remove Items from List'>";
+        $domList.="</form>";
+
+        return $domList;
+
     }
 
     
