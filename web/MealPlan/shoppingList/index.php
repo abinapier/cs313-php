@@ -42,7 +42,7 @@
                 echo $val;
                 if( strpos($key, 'ingredient') !== false) {
                     if(isset($_POST[$key])){
-                        addIngredientToList($val);
+                        addIngredientToList($_POST[$key]);
                     }
                 } 
             }
