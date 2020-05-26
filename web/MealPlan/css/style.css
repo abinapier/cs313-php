@@ -123,7 +123,8 @@ form.mealPlanAdd{
     max-width: 80%;
 }
 input[type="checkbox"]{
-    display: inline;
+    display: inline-block;
+    width: auto;
 }
 textarea{
     height: 300px;
