@@ -1,6 +1,7 @@
 <?php
     session_start();
     require_once '../library/connections.php';
+    require_once '../model/meal-plan-model.php';
     require_once '../model/shopping-list-model.php';
 
 
@@ -26,6 +27,7 @@
 
         break;
         case 'add':
+            $mealPlanSelect = getMealPlanSelect();
             include '../view/add-items-shopping-list.php';
         break;
         case 'update':

@@ -13,6 +13,20 @@
         
     }
 
+    function getMealPlanSelect(){
+        $db = dbConnect();
+
+        $domList = "<select name='menu'>";
+        foreach ($db->query('SELECT date, id FROM menu WHERE user_id='.$_SESSION['user_id']) as $row)
+        {
+               
+            $domList.="<option value=".$row['id'].">".$row['date']."</option>";
+        }
+        $domList.="</select>";
+
+        return $domList;
+    }
+
     function getMealPlanListEdit(){
         $db = dbConnect();
 

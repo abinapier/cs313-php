@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>My Meal Plans</title>
+    <title>Add to Shopping List</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" media="screen" href="/MealPlan/css/style.css">
@@ -17,14 +17,17 @@ session_start();
 </header>
 
 <main>
-    <h1>My Meal Plans</h1>
+    <h1>Add to Shopping List</h1>
     <?php
     if (isset($message)) {
         echo $message;
     }
     ?>
-    <a href="/MealPlan/mealPlan?action=add" title="Add a new meal plan" class="link-btn">Add a New Meal Plan</a>
-    <a href="/MealPlan/mealPlan?action=edit" title="Edit your meal plans" class="link-btn">Edit Meal Plans</a>
+    <form method="post" action="">
+        <?php echo $mealPlanSelect;?>
+    </form>
+    <a href="/MealPlan/mealPlan?action=view" title="Back to shopping list" >Cancel</a>
+    
     
 </main>
 
