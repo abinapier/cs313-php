@@ -21,6 +21,7 @@
             include '../view/login.php';
         break;
         case 'edit':
+            $message = getIngredientsEdit();
             include '../view/remove-items-shopping-list.php';
         break;
         case 'delete':
