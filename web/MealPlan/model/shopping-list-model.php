@@ -49,7 +49,7 @@
     }
 
 
-    function removeIngredientToList($id){
+    function removeIngredientFromList($id){
         
         $db = dbConnect();
         
