@@ -37,6 +37,7 @@
             include '../view/add-items-shopping-list.php';
         break;
         case 'update':
+            print_r($_POST);
             foreach( $_POST as $key => $val ) {
                 if( strpos($key, 'ingredient') !== false) {
                     if(isset($_POST[$key])){
