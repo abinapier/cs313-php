@@ -30,6 +30,11 @@
             $mealPlanSelect = getMealPlanSelect();
             include '../view/add-items-shopping-list.php';
         break;
+        case 'addUpdate':
+            $menuId = filter_input(INPUT_POST, 'menu');
+            $ingredientCheckBox = getIngredients($menuId);
+            include '../view/add-items-shopping-list.php';
+        break;
         case 'update':
 
         break;

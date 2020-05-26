@@ -16,5 +16,24 @@
         
     }
 
+    function getIngredients($menuId){
+        $db = dbConnect();
+        $statement = $db->query('SELECT recipe_one_id, recipe_two_id, recipe_three_id, recipe_four_id, recipe_five_id FROM menu WHERE id='.$menuId);
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $recipes = [$results[0]['recipe_one_id'], $results[0]['recipe_two_id'], $results[0]['recipe_three_id'], $results[0]['recipe_four_id'], $results[0]['recipe_five_id']];
+        $domList = "<form method='post' action='/MealPlan/shoppingList/index.php'>";
+        foreach($recipes as $recipe){
+            foreach ($db->query('SELECT name FROM ingredient WHERE recipe_id='.$recipe) as $row)
+            {
+                //add checkbox
+                $domList.="<label>".$row['name']."<input type='checkbox' name='ingredient".$row['id']."' value='".$row['id']."'></label>";    
+            }
+        }
+        $domList.="<input type='hidden' name='action' value='update'>";
+        $domList.="<input type='submit' value='Delete Meal Plans'>";
+        $domList.="</form>";
+        return $domList;
+    }
 
+    
 ?>
