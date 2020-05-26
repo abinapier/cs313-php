@@ -41,7 +41,8 @@
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         $listid = $results[0]['id'];
 
-        $updateStatement = $db->prepare('UPDATE ingredient SET shoppinglist_id='.$listid.'WHERE id='.$id);
+        $updateStatement = $db->prepare('UPDATE ingredient SET shoppinglist_id='.$listid.'WHERE id=:id');
+        $updateStatement->bindParam(':id', $id);
         $updateStatement->execute();
     }
 
