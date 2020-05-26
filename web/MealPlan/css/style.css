@@ -119,7 +119,7 @@ form{
 form label, input, textarea{
     display:block;
 }
-form.addMealPlan{
+form.mealPlanAdd{
     width: 75%;
 }
 input[type="checkbox"]{
