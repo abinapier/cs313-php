@@ -111,12 +111,19 @@ ul{
     padding:0;
 }
 form{
-    width: 250px;
+    min-width: 250px;
+    max-width:50%;
     margin: auto;
 }
 
-form label, input{
+form label, input, textarea{
     display:block;
+}
+input[type="checkbox"]{
+    display: inline;
+}
+textarea{
+    height: 300px;
 }
 form label{
     text-align: left;
