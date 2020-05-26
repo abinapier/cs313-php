@@ -38,8 +38,6 @@
         break;
         case 'update':
             foreach( $_POST as $key => $val ) {
-                $postId = filter_input(INPUT_POST, $key);
-                echo $val;
                 if( strpos($key, 'ingredient') !== false) {
                     if(isset($_POST[$key])){
                         addIngredientToList($_POST[$key]);
