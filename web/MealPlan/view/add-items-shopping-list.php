@@ -23,12 +23,12 @@ session_start();
         echo $message;
     }
     ?>
-    <form method="post" action="/MealPlan/mealPlan/index.php">
+    <form method="post" action="/MealPlan/shoppingList/index.php">
         <?php echo $mealPlanSelect;?>
         <input type="submit" value="See Ingredients">
         <input type="hidden" name="action" value="addUpdate">
     </form>
-    <a href="/MealPlan/mealPlan?action=view" title="Back to shopping list" >Cancel</a>
+    <a href="/MealPlan/shoppingList?action=view" title="Back to shopping list" >Cancel</a>
     <?php
     if (isset($ingredientCheckBox)) {
         echo $ingredientCheckBox;
