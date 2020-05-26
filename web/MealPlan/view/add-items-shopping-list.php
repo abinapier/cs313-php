@@ -23,7 +23,7 @@ session_start();
         echo $message;
     }
     ?>
-    <form method="post" action="/MealPlan/mealPlan">
+    <form method="post" action="/MealPlan/mealPlan/index.php">
         <?php echo $mealPlanSelect;?>
         <input type="submit" value="See Ingredients">
         <input type="hidden" name="action" value="addUpdate">
