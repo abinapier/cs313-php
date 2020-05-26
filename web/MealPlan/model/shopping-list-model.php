@@ -36,6 +36,7 @@
     }
 
     function addIngredientToList($id){
+        echo "adding ingredient";
         $db = dbConnect();
         $statement = $db->query('SELECT id FROM shoppinglist WHERE user_id='.$_SESSION["user_id"]);
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
