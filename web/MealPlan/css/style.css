@@ -119,11 +119,17 @@ form{
 form label, input, textarea{
     display:block;
 }
+form.addMealPlan{
+    width: 75%;
+}
 input[type="checkbox"]{
     display: inline;
 }
 textarea{
     height: 300px;
+    width: 100%;
+    font-family: 'Jost', sans-serif;
+    font-size: 100%;
 }
 form label{
     text-align: left;
