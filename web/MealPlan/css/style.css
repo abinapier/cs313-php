@@ -61,7 +61,7 @@ footer{
     padding: 10px;
 }
 
-.link-btn{
+.link-btn, input[type="button"]{
     padding: 5px 10px;
     text-decoration: none;
     color: #45a11d;
@@ -72,7 +72,7 @@ footer{
     display: inline-block;
 }
 
-.link-btn:hover{
+.link-btn:hover, input[type="button"]{
     border-width: 2px;
 }
 

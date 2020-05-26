@@ -23,7 +23,7 @@ session_start();
         echo $message;
     }
     ?>
-    <form method='post' action="/MealPlan/mealPlan/index.php" class="mealPlanAdd">
+    <form class="mealPlanAdd" method='post' action="/MealPlan/mealPlan/index.php">
     <label> Date: <input type="date" name="date"></label>
     <table>
         <thead>
