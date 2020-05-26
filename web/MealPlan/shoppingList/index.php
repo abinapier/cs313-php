@@ -31,10 +31,8 @@
             include '../view/add-items-shopping-list.php';
         break;
         case 'addUpdate':
-            echo 'here';
             $menuId = filter_input(INPUT_POST, 'menu');
             $ingredientCheckBox = getIngredients($menuId);
-            print_r($ingredientCheckBox);
             include '../view/add-items-shopping-list.php';
         break;
         case 'update':
