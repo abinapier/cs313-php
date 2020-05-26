@@ -30,9 +30,19 @@
             }
         }
         $domList.="<input type='hidden' name='action' value='update'>";
-        $domList.="<input type='submit' value='Delete Meal Plans'>";
+        $domList.="<input type='submit' value='Add Ingredients to List'>";
         $domList.="</form>";
         return $domList;
+    }
+
+    function addIngredientToList($id){
+        $db = dbConnect();
+        $statement = $db->query('SELECT id FROM shoppinglist WHERE user_id='.$_SESSION["user_id"]);
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $listid = $results[0]['id'];
+
+        $updateStatement = $db->prepare('UPDATE ingredient SET shoppinglist_id='.$listid.'WHERE id='.$id);
+        $updateStatement->execute();
     }
 
     

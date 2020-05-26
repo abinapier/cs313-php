@@ -37,7 +37,15 @@
             include '../view/add-items-shopping-list.php';
         break;
         case 'update':
-
+            foreach( $_POST as $key => $val ) {
+                $postId = filter_input(INPUT_POST, $key);
+                if( strpos($key, 'ingredient') !== false) {
+                    if(isset($_POST[$key])){
+                        addIngredientToList($postId);
+                    }
+                } 
+            }
+            header("Location: /MealPlan/shoppingList?action=view");
         break;
         default:
             
