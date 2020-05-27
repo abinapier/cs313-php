@@ -44,10 +44,14 @@
         echo "connection made";
         $insert_QUERY = $db->prepare("INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)");
         echo "prepared";
-        $insert_QUERY->bindParam(':book', $book,PDO::PARAM_STR);
-        $insert_QUERY->bindParam(':chapter', $chapter,PDO::PARAM_INT);
-        $insert_QUERY->bindParam(':verse', $verse,PDO::PARAM_INT);
-        $insert_QUERY->bindParam(':content', $text,PDO::PARAM_STR);
+        $insert_QUERY->bindParam(':book', $book, PDO::PARAM_STR);
+        echo "bind 1";
+        $insert_QUERY->bindParam(':chapter', $chapter, PDO::PARAM_INT);
+        echo "bind 2";
+        $insert_QUERY->bindParam(':verse', $verse, PDO::PARAM_INT);
+        echo "bind 3";
+        $insert_QUERY->bindParam(':content', $text, PDO::PARAM_STR);
+        echo "bind 4";
         echo $insert_QUERY;
         $insert_QUERY->execute();
 
