@@ -1,8 +1,6 @@
 <?php
     require_once "connection.php";
-    ini_set(‘display_errors’, 1);
-    ini_set(‘display_startup_errors’, 1);
-    error_reporting(E_ALL);
+    
     $action = filter_input(INPUT_POST, 'action');
     if($action == NULL){
         $action = filter_input(INPUT_GET, 'action');
@@ -12,8 +10,8 @@
         case "inputScripture":
             echo "input Scripture";
             $book= filter_input(INPUT_POST, 'book', FILTER_SANITIZE_STRING);
-            $chapter= filter_input(INPUT_POST, 'chapter', FILTER_SANITIZE_NUMBER_FLOAT);
-            $verse= filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_NUMBER_FLOAT);
+            $chapter= filter_input(INPUT_POST, 'chapter', FILTER_SANITIZE_NUMBER_INT);
+            $verse= filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_NUMBER_INT);
             $text= filter_input(INPUT_POST, 'text', FILTER_SANITIZE_STRING);
             $checkArray = array();
             
@@ -21,7 +19,7 @@
                 $postId = filter_input(INPUT_POST, $key);
                 if( strpos($key, 'topic') !== false) {
                     if(isset($_POST[$key])){
-                        $checkArray[] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_NUMBER_FLOAT);
+                        $checkArray[] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_NUMBER_INT);
                     }
                 } 
             }
