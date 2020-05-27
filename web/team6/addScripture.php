@@ -8,7 +8,7 @@
 
     switch ($action){
         case "inputScripture":
-            echo "input Scripture";
+            
             $book= filter_input(INPUT_POST, 'book', FILTER_SANITIZE_STRING);
             $chapter= filter_input(INPUT_POST, 'chapter', FILTER_SANITIZE_NUMBER_INT);
             $verse= filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_NUMBER_INT);
@@ -23,13 +23,11 @@
                     }
                 } 
             }
-            echo "content set";
-            try{
-                insertScripture($book, $chapter, $verse, $text, $checkArray);
-                echo "ran insert function";
-            }catch(Exception $e){
-                echo $e;
-            }
+            
+            
+            insertScripture($book, $chapter, $verse, $text, $checkArray);
+            echo "ran insert function";
+            
         break;
         default:
             exit;
@@ -41,19 +39,27 @@
     function insertScripture($book, $chapter, $verse, $text, $checkArray){
         
         $db = dbConnect();
-        echo "connection made";
+        
         $insert_QUERY = $db->prepare("INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)");
-        echo "prepared";
+        
         $insert_QUERY->bindParam(':book', $book, PDO::PARAM_STR);
-        echo "bind 1";
+        
         $insert_QUERY->bindParam(':chapter', $chapter, PDO::PARAM_INT);
-        echo "bind 2";
+        
         $insert_QUERY->bindParam(':verse', $verse, PDO::PARAM_INT);
-        echo "bind 3";
+        
         $insert_QUERY->bindParam(':content', $text, PDO::PARAM_STR);
-        echo "bind 4";
+        
         //echo $insert_QUERY;
         $insert_QUERY->execute();
+
+        $scriptureId = $db->lastInsertId($insert_QUERY);
+        foreach($checkArray as $topicIndex){
+            $addLink_QUERY = $db->prepare("INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:scrip_id, :topic_id");
+            $addLink_QUERY->bindParam(':scrip_id', $scriptureId);
+            $addLink_QUERY->bindParam(':topic_id', $topicIndex);
+            $addLink_QUERY->execute();
+        }
 
     }
 ?>
