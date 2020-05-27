@@ -33,6 +33,7 @@
             
         break;
         case "generateScripturePage":
+            echo "here!";
             try{
             $content = createScripturePage();
             }catch(Exception $e){
