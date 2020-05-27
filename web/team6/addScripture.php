@@ -41,8 +41,9 @@
     function insertScripture($book, $chapter, $verse, $text, $checkArray){
         
         $db = dbConnect();
-
+        echo "connection made";
         $insert_QUERY = $db->prepare("INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)");
+        echo "prepared";
         $insert_QUERY->bindParam(':book', $book,PDO::PARAM_STR);
         $insert_QUERY->bindParam(':chapter', $chapter,PDO::PARAM_INT);
         $insert_QUERY->bindParam(':verse', $verse,PDO::PARAM_INT);
