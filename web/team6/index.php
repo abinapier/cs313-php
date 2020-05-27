@@ -19,6 +19,7 @@
     <label><textarea name="content"></textarea></label>
     <?php echo $checkboxList; ?>
     <input type="submit" value="Add Scripture">
+    <input type="hidden" name="action" value="inputScripture">
     </form>
 </body>
 </body>
