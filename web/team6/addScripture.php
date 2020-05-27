@@ -53,7 +53,7 @@
         //echo $insert_QUERY;
         $insert_QUERY->execute();
 
-        $scriptureId = $db->lastInsertId($insert_QUERY);
+        $scriptureId = $db->lastInsertId();
         echo $scriptureId;
         foreach($checkArray as $topicIndex){
             echo $topicIndex;
