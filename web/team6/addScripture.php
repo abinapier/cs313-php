@@ -60,7 +60,7 @@
         echo $scriptureId;
         foreach($checkArray as $topicIndex){
             echo $topicIndex;
-            $addLink_QUERY = $db->prepare("INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:scrip_id, :topic_id");
+            $addLink_QUERY = $db->prepare("INSERT INTO scripture_topic (scripture_id, topic_id) VALUES (:scrip_id, :topic_id)");
             $addLink_QUERY->bindParam(':scrip_id', $scriptureId);
             $addLink_QUERY->bindParam(':topic_id', $topicIndex);
             $addLink_QUERY->execute();
