@@ -80,9 +80,16 @@
     function createScripturePage(){
         $db = dbConnect();
         $ingredientList = "<ul>";
+        $topicArray = array();
+        foreach($db->query('SELECT id, name FROM topic') as $curTopics){
+            $topicArray[$curTopics['id']] = $curTopics['name'];
+        }
         foreach ($db->query('SELECT id, book, chapter, verse, content FROM scriptures') as $row)
         {
             $ingredientList.="<li>".$row['book']." ".$row['chapter'].":".$row['verse']." ".$row["content"]."</li>";
+            foreach($db->query('SELECT topic_id FROM scripture_topic WHERE scripture_id='.$row['id']) as $topic){
+                $ingredientList.="<li>".$topicArray[$topic['topic_id']]."</li>";
+            }
         }
         $ingredientList.="</ul>";
         return $ingredientList;
