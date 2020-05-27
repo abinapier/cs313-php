@@ -24,8 +24,11 @@
                 } 
             }
             
-            
-            insertScripture($book, $chapter, $verse, $text, $checkArray);
+            try{
+                insertScripture($book, $chapter, $verse, $text, $checkArray);
+            }catch(Exception $e){
+                echo $e;
+            }
             echo "ran insert function";
             
         break;
