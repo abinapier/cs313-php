@@ -25,7 +25,11 @@
                 } 
             }
             echo "content set";
+            try{
             insertScripture($book, $chapter, $verse, $text, $checkArray);
+            }catch(Exception $e){
+                echo $e;
+            }
         break;
         default:
             exit;
@@ -35,6 +39,7 @@
     require_once "connection.php";
 
     function insertScripture($book, $chapter, $verse, $text, $checkArray){
+        
         $db = dbConnect();
 
         $insert_QUERY = $db->prepare("INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)");
