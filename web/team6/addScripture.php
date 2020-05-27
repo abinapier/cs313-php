@@ -9,19 +9,22 @@
 
     switch ($action){
         case "inputScripture":
+            echo "input Scripture";
             $book= filter_input(INPUT_POST, 'book', FILTER_SANITIZE_STRING);
             $chapter= filter_input(INPUT_POST, 'chapter', FILTER_SANITIZE_NUMBER_FLOAT);
             $verse= filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_NUMBER_FLOAT);
             $text= filter_input(INPUT_POST, 'text', FILTER_SANITIZE_STRING);
             $checkArray = array();
-            foreach( $_POST as $key => $val ) {
+            
+            /*foreach( $_POST as $key => $val ) {
                 $postId = filter_input(INPUT_POST, $key);
                 if( strpos($key, 'topic') !== false) {
                     if(isset($_POST[$key])){
                         $checkArray[] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_NUMBER_FLOAT);
                     }
                 } 
-            }
+            }*/
+            echo "content set";
             insertScripture($book, $chapter, $verse, $text, $checkArray);
         break;
         default:
