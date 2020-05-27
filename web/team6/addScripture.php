@@ -29,9 +29,13 @@
             }catch(Exception $e){
                 echo $e;
             }
-            echo "ran insert function";
+            header("Location: addScripture.php?action=generateScriptuePage");
             
         break;
+        case "generateScripturePage":
+            $content = createScripturePage();
+            include "showScriptures.php";
+            exit;
         default:
             exit;
 
@@ -66,5 +70,16 @@
             $addLink_QUERY->execute();
         }
 
+    }
+
+    function createScripturePage(){
+        $db = dbConnect();
+        $ingredientList = "<ul>";
+        foreach ($db->query('SELECT id, book, chapter, verse, content FROM scriptures') as $row)
+        {
+            $ingredientList.="<li>".$row['book']." ".$row['chapter'].":".$row['verse']." ".$row["content"]."</li>";
+        }
+        $ingredientList.="</ul>";
+        return $ingredientList;
     }
 ?>
