@@ -26,7 +26,8 @@
             }
             echo "content set";
             try{
-            insertScripture($book, $chapter, $verse, $text, $checkArray);
+                insertScripture($book, $chapter, $verse, $text, $checkArray);
+                echo "ran insert function";
             }catch(Exception $e){
                 echo $e;
             }
@@ -47,6 +48,7 @@
         $insert_QUERY->bindParam(':chapter', $chapter,PDO::PARAM_INT);
         $insert_QUERY->bindParam(':verse', $verse,PDO::PARAM_INT);
         $insert_QUERY->bindParam(':content', $text,PDO::PARAM_STR);
+        echo $insert_QUERY;
         $insert_QUERY->execute();
 
     }
