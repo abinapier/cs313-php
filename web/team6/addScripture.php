@@ -12,7 +12,7 @@
             $book= filter_input(INPUT_POST, 'book', FILTER_SANITIZE_STRING);
             $chapter= filter_input(INPUT_POST, 'chapter', FILTER_SANITIZE_NUMBER_INT);
             $verse= filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_NUMBER_INT);
-            $text= filter_input(INPUT_POST, 'text', FILTER_SANITIZE_STRING);
+            $text= filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
             $checkArray = array();
             
             foreach( $_POST as $key => $val ) {
