@@ -16,14 +16,14 @@
             $text= filter_input(INPUT_POST, 'text', FILTER_SANITIZE_STRING);
             $checkArray = array();
             
-            /*foreach( $_POST as $key => $val ) {
+            foreach( $_POST as $key => $val ) {
                 $postId = filter_input(INPUT_POST, $key);
                 if( strpos($key, 'topic') !== false) {
                     if(isset($_POST[$key])){
                         $checkArray[] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_NUMBER_FLOAT);
                     }
                 } 
-            }*/
+            }
             echo "content set";
             insertScripture($book, $chapter, $verse, $text, $checkArray);
         break;
@@ -38,10 +38,10 @@
         $db = dbConnect();
 
         $insert_QUERY = $db->prepare("INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)");
-        $insert_QUERY->bindParam(':book', $book);
-        $insert_QUERY->bindParam(':chapter', $chapter);
-        $insert_QUERY->bindParam(':verse', $verse);
-        $insert_QUERY->bindParam(':content', $text);
+        $insert_QUERY->bindParam(':book', $book,PDO::PARAM_STR);
+        $insert_QUERY->bindParam(':chapter', $chapter,PDO::PARAM_INT);
+        $insert_QUERY->bindParam(':verse', $verse,PDO::PARAM_INT);
+        $insert_QUERY->bindParam(':content', $text,PDO::PARAM_STR);
         $insert_QUERY->execute();
 
     }
