@@ -52,7 +52,7 @@
         echo "bind 3";
         $insert_QUERY->bindParam(':content', $text, PDO::PARAM_STR);
         echo "bind 4";
-        echo $insert_QUERY;
+        //echo $insert_QUERY;
         $insert_QUERY->execute();
 
     }
