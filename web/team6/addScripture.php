@@ -29,7 +29,7 @@
             }catch(Exception $e){
                 echo $e;
             }
-            header("Location: addScripture.php?action=generateScriptuePage");
+            header("Location: addScripture.php?action=generateScripturePage");
             
         break;
         case "generateScripturePage":
