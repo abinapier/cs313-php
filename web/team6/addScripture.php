@@ -33,7 +33,11 @@
             
         break;
         case "generateScripturePage":
+            try{
             $content = createScripturePage();
+            }catch(Exception $e){
+                echo $e;
+            }
             include "showScriptures.php";
             exit;
         default:
