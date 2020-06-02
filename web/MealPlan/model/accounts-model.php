@@ -48,6 +48,3 @@ function register($clientName, $clientEmail, $clientPassword){
     }
     return 0;
 }
-
-
-?>

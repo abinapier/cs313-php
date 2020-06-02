@@ -22,14 +22,15 @@
         case 'login':
             $clientEmail = filter_input(INPUT_POST, 'email');
             $clientPassword = filter_input(INPUT_POST, 'password');
+            
 
             if(empty($clientEmail)||empty($clientPassword)){
                 $message = '<p>Please provide your email and password.</p>';
                 include '../view/login.php';
                 exit;
             }
-            
-            if(login($clientEmail, $clientPassword)==1){
+            $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
+            if(login($clientEmail, $hashedPassword)==1){
                 
                 $userName = getName();
                 $message = "<p>Thanks $userName, you are logged in.</p>";
@@ -60,7 +61,8 @@
                 include '../view/register.php';
                 exit; 
             }
-            $regOutcome = register($clientName, $clientEmail, $clientPassword);
+            $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
+            $regOutcome = register($clientName, $clientEmail, $hashedPassword);
             if($regOutcome===1){
                 $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
                 include '../view/login.php';
@@ -75,4 +77,3 @@
         default:
             
     }
-?>

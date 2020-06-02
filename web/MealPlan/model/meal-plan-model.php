@@ -87,5 +87,3 @@
         $insert_QUERY->bindValue(':recipe_five_id', $dayFiveId);
         $insert_QUERY->execute();
     }
-
-?>

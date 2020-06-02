@@ -22,7 +22,7 @@
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         $boxid = $results[0]['id'];
 
-        
+        $domList="";
         foreach ($db->query('SELECT name, id FROM recipe WHERE recipebox_id='.$boxid) as $row)
         {
             $domList.="<option value='".$row['id']."'>".$row['name']."</option>";   
@@ -132,4 +132,3 @@
         }
 
     }
-?>

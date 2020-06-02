@@ -14,4 +14,3 @@
         default:
             include 'view/home.php';
     }
-?>

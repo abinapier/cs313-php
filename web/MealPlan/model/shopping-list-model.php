@@ -76,6 +76,3 @@
         return $domList;
 
     }
-
-    
-?>
