@@ -5,6 +5,7 @@
         $statement = $db->query('SELECT id FROM recipebox WHERE user_id='.$_SESSION["user_id"]);
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         $boxid = $results[0]['id'];
+        
 
         $domList = "<ul>";
         foreach ($db->query('SELECT name, id FROM recipe WHERE recipebox_id='.$boxid) as $row)

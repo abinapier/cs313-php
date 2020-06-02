@@ -51,7 +51,7 @@ function register($clientName, $clientEmail, $clientPassword){
         $box_insert->bindParam(':user_id', $_SESSION["user_id"]);
         $box_insert->execute();
 
-        $list_insert = $db->prepare("INSERT INTO shoppinglist(user_id) VALUES (:user_id)");
+        $list_insert = $db->prepare("INSERT INTO shoppinglist (user_id) VALUES (:user_id)");
         $list_insert->bindParam(':user_id', $_SESSION["user_id"]);
         $list_insert->execute();
         return 1;
