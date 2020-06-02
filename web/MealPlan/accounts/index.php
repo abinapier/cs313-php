@@ -66,6 +66,7 @@
             echo($hashedPassword);
             
             $regOutcome = register($clientName, $clientEmail, $hashedPassword);
+            echo($regOutcome);
             if($regOutcome===1){
                 $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
                 include '../view/login.php';

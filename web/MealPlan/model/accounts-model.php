@@ -37,7 +37,7 @@ function register($clientName, $clientEmail, $clientPassword){
         }
     
     }
-    
+    echo('selected');
     if ($emailValid){
         $insert_QUERY = $db->prepare("INSERT INTO users (name, email, password) VALUES (:name, :email, :password)");
         $insert_QUERY->bindParam(':name', $clientName);
