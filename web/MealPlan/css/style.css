@@ -9,6 +9,10 @@ body{
 main{
     padding: 15px;
 }
+
+main img{
+    max-width: 100%;
+}
 nav{
     background-color: #45a11d;
     margin: auto;
