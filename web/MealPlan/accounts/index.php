@@ -61,7 +61,10 @@
                 include '../view/register.php';
                 exit; 
             }
-            $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
+            
+            $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);}
+            echo($hashedPassword);
+            
             $regOutcome = register($clientName, $clientEmail, $hashedPassword);
             if($regOutcome===1){
                 $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
