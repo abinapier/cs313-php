@@ -50,10 +50,12 @@ function register($clientName, $clientEmail, $clientPassword){
         $box_insert = $db->prepare("INSERT INTO recipebox (user_id) VALUES (:user_id)");
         $box_insert->bindParam(':user_id', $_SESSION["user_id"]);
         $box_insert->execute();
+        echo 'box';
 
         $list_insert = $db->prepare("INSERT INTO shoppinglist (user_id) VALUES (:user_id)");
         $list_insert->bindParam(':user_id', $_SESSION["user_id"]);
         $list_insert->execute();
+        echo "list";
         return 1;
     }
     return 0;
