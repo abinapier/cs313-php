@@ -13,6 +13,7 @@
             $domList.="<li><a href='/MealPlan/recipe/index.php?action=view&id=".$row['id']."'>".$row['name']."</a></li>";   
         }
         $domList.="</ul>";
+        echo "hi";
         echo $domList;
         return $domList;
         
