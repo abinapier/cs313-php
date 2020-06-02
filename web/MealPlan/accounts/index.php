@@ -62,7 +62,7 @@
                 exit; 
             }
             
-            $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);}
+            $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
             echo($hashedPassword);
             
             $regOutcome = register($clientName, $clientEmail, $hashedPassword);
@@ -76,7 +76,7 @@
                 exit;
             }
             include '../view/register.php';
-        break;
-        default:
+            break;
+            default:
             
     }
