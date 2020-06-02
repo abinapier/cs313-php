@@ -9,10 +9,11 @@
         $domList = "<ul>";
         foreach ($db->query('SELECT name, id FROM recipe WHERE recipebox_id='.$boxid) as $row)
         {
+            echo "one";
             $domList.="<li><a href='/MealPlan/recipe/index.php?action=view&id=".$row['id']."'>".$row['name']."</a></li>";   
         }
         $domList.="</ul>";
-
+        echo $domList;
         return $domList;
         
     }
