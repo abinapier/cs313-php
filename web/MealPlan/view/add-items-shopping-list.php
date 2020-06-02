@@ -24,7 +24,7 @@ session_start();
     }
     ?>
     <form method="post" action="/MealPlan/shoppingList/index.php">
-        <?php echo $mealPlanSelect;?>
+        <label>Select Meal Plan: <?php echo $mealPlanSelect;?></label>
         <input type="submit" value="See Ingredients">
         <input type="hidden" name="action" value="addUpdate">
     </form>
