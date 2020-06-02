@@ -46,6 +46,14 @@ function register($clientName, $clientEmail, $clientPassword){
         $insert_QUERY->bindParam(':email', $clientEmail);
         $insert_QUERY->bindParam(':password', $clientPassword);
         $insert_QUERY->execute();
+
+        $box_insert = $db->prepare("INSERT INTO recipebox (user_id) VALUES (:user_id)");
+        $box_insert->bindParam(':user_id', $_SESSION["user_id"]);
+        $box_insert->execute();
+
+        $list_insert = $db->prepare("INSERT INTO shoppinglist(user_id) VALUES (:user_id)");
+        $list_insert->bindParam(':user_id', $_SESSION["user_id"]);
+        $list_insert->execute();
         return 1;
     }
     return 0;
