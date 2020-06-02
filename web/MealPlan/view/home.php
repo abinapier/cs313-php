@@ -17,6 +17,7 @@ session_start();
 </header>
 
 <main>
+    <img src="../images/food-splash.jpg" alt="fresh produce">
     <h1>MealPlan</h1>
     <div class="homepage">
         <a class="link-btn" href="/MealPlan/recipe?action=search" title="Browse Recipes">Browse Your Recipes</a>
