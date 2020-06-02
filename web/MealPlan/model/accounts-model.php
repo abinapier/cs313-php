@@ -49,7 +49,12 @@ function register($clientName, $clientEmail, $clientPassword){
 
         $box_insert = $db->prepare("INSERT INTO recipebox (user_id) VALUES (:user_id)");
         $box_insert->bindParam(':user_id', $_SESSION["user_id"]);
-        $box_insert->execute();
+        try{
+            $box_insert->execute();
+        }catch(Exception $e){
+            echo $e;
+        }
+        
         echo 'box';
 
         $list_insert = $db->prepare("INSERT INTO shoppinglist (user_id) VALUES (:user_id)");
