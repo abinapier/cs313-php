@@ -56,12 +56,12 @@ function register($clientName, $clientEmail, $clientPassword){
             echo $e;
         }
         
-        echo 'box';
+        
 
         $list_insert = $db->prepare("INSERT INTO shoppinglist (user_id) VALUES (:user_id)");
         $list_insert->bindParam(':user_id', $userId);
         $list_insert->execute();
-        echo "list";
+        
         return 1;
     }
     return 0;
