@@ -29,9 +29,8 @@
                 include '../view/login.php';
                 exit;
             }
-            $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
-            echo $hashedPassword;
-            if(login($clientEmail, $hashedPassword)==1){
+            
+            if(login($clientEmail, $clientPassword)==1){
                 
                 $userName = getName();
                 $message = "<p>Thanks $userName, you are logged in.</p>";

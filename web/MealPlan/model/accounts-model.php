@@ -4,9 +4,11 @@ function login($email, $password){
 
     foreach ($db->query('SELECT * FROM users') as $row)
     {
-        if($row['email']==$email && $row['password']==$password){
-            $_SESSION["user_id"] = $row['id'];
-            return 1;
+        if($row['email']==$email){
+            if(password_verify($password, $row['password'])){
+                $_SESSION["user_id"] = $row['id'];
+                return 1;
+            }
         }
     
     }
