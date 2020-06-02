@@ -46,9 +46,10 @@ function register($clientName, $clientEmail, $clientPassword){
         $insert_QUERY->bindParam(':email', $clientEmail);
         $insert_QUERY->bindParam(':password', $clientPassword);
         $insert_QUERY->execute();
+        $userId = $db->lastInsertId();
 
         $box_insert = $db->prepare("INSERT INTO recipebox (user_id) VALUES (:user_id)");
-        $box_insert->bindParam(':user_id', $_SESSION["user_id"]);
+        $box_insert->bindParam(':user_id', $userId);
         try{
             $box_insert->execute();
         }catch(Exception $e){
@@ -58,7 +59,7 @@ function register($clientName, $clientEmail, $clientPassword){
         echo 'box';
 
         $list_insert = $db->prepare("INSERT INTO shoppinglist (user_id) VALUES (:user_id)");
-        $list_insert->bindParam(':user_id', $_SESSION["user_id"]);
+        $list_insert->bindParam(':user_id', $userId);
         $list_insert->execute();
         echo "list";
         return 1;
