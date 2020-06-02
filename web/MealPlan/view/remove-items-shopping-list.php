@@ -23,7 +23,7 @@ session_start();
         echo $message;
     }
     ?>
-    <a href="/MealPlan/shoppingList?action=search" title="Back to Shopping List" >Cancel</a>
+    <a href="/MealPlan/shoppingList?action=view" title="Back to Shopping List" >Cancel</a>
     
     
 </main>
