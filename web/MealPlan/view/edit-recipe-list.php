@@ -23,7 +23,7 @@ session_start();
         echo $message;
     }
     ?>
-    <a href="/MealPlan/recipe?action=search" title="Back to recipes" class="btn-link">Cancel</a>
+    <a href="/MealPlan/recipe?action=search" title="Back to recipes">Cancel</a>
 </main>
 
 <footer>

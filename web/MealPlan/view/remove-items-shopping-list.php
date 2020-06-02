@@ -23,8 +23,8 @@ session_start();
         echo $message;
     }
     ?>
-    <a href="/MealPlan/mealPlan?action=add" title="Add a new meal plan" class="link-btn">Add a New Meal Plan</a>
-    <a href="/MealPlan/mealPlan?action=edit" title="Edit your meal plans" class="link-btn">Edit Meal Plans</a>
+    <a href="/MealPlan/mealPlan?action=search" title="Back to Shopping List" >Cancel</a>
+    
     
 </main>
 
