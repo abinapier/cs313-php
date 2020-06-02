@@ -1,5 +1,6 @@
 <?php
     function getRecipes(){
+        //return recipes in a list format
         $db = dbConnect();
         
         $statement = $db->query('SELECT id FROM recipebox WHERE user_id='.$_SESSION["user_id"]);
@@ -20,6 +21,7 @@
     }
 
     function getRecipeSelect(){
+        //return recipes in select format
         $db = dbConnect();
         $statement = $db->query('SELECT id FROM recipebox WHERE user_id='.$_SESSION["user_id"]);
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -36,6 +38,7 @@
     }
 
     function getRecipeListEdit(){
+        //return recipes in checkbox format
         $db = dbConnect();
         $statement = $db->query('SELECT id FROM recipebox WHERE user_id='.$_SESSION["user_id"]);
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -53,6 +56,7 @@
     }
 
     function deleteRecipe($id){
+        //remove recipe with id $id
         $db = dbConnect();
         foreach ($db->query('SELECT recipe_one_id, recipe_two_id, recipe_three_id, recipe_four_id, recipe_five_id FROM menu WHERE user_id='.$_SESSION['user_id']) as $row){
             if($row['recipe_one_id']==$id ||$row['recipe_two_id']==$id ||$row['recipe_three_id']==$id ||$row['recipe_four_id']==$id ||$row['recipe_five_id']==$id){
@@ -74,15 +78,17 @@
     }
 
     function deleteIngredients($id){
+        //delete ingredient with id $id
         $db = dbConnect();
         
         $insert_QUERY = $db->prepare("DELETE FROM ingredient WHERE id=:id");
-        $insert_QUERY->bindParam(':id', $id);
+        $insert_QUERY->bindParam(':id', $id, PDO::PARAM_INT);
         $insert_QUERY->execute();
     }
 
 
     function getRecipeName($id){
+        //get name of recipe with id $id
         $db = dbConnect();
         $statement = $db->query('SELECT name FROM recipe WHERE id='.$id);
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -91,6 +97,7 @@
         return $name;
     }
     function getIngredients($id){
+        //get ingerdients from recipe with id $id in list format
         $db = dbConnect();
         $ingredientList = "<ul>";
         foreach ($db->query('SELECT name, amount FROM ingredient WHERE recipe_id='.$id) as $row)
@@ -102,6 +109,7 @@
         
     }
     function getInstructions($id){
+        //get instructions from recipe with id $id in paragraph format. 
         $db = dbConnect();
         $statement = $db->query('SELECT instructions FROM recipe WHERE id='.$id);
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -111,25 +119,28 @@
     }
 
     function addRecipe($name, $instructions, $ingredientArray, $amountArray){
+        //add a new recipe
+
         //get recipebox id for user.
         $db = dbConnect();
         $statement = $db->query('SELECT id FROM recipebox WHERE user_id='.$_SESSION["user_id"]);
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         $boxid = $results[0]['id'];
 
+        //insert new recipe
         $insert_QUERY = $db->prepare("INSERT INTO recipe (name, instructions, recipebox_id) VALUES (:name, :instructions, :recipebox_id)");
-        $insert_QUERY->bindParam(':name', $name);
-        $insert_QUERY->bindParam(':instructions', $instructions);
-        $insert_QUERY->bindParam(':recipebox_id', $boxid);
+        $insert_QUERY->bindParam(':name', $name, PDO::PARAM_STR);
+        $insert_QUERY->bindParam(':instructions', $instructions, PDO::PARAM_STR);
+        $insert_QUERY->bindParam(':recipebox_id', $boxid, PDO::PARAM_INT);
         $insert_QUERY->execute();
         $newId = $db->lastInsertId();
         
         foreach($amountArray as $key=>$amount){
             $ingredientName = $ingredientArray[$key];
             $ingredient_QUERY = $db->prepare("INSERT INTO ingredient (name, amount, recipe_id) VALUES (:name, :amount, :recipe_id)");
-            $ingredient_QUERY->bindParam(':name', $ingredientName);
-            $ingredient_QUERY->bindParam(':amount', $amount);
-            $ingredient_QUERY->bindParam(':recipe_id', $newId);
+            $ingredient_QUERY->bindParam(':name', $ingredientName, PDO::PARAM_STR);
+            $ingredient_QUERY->bindParam(':amount', $amount, PDO::PARAM_STR);
+            $ingredient_QUERY->bindParam(':recipe_id', $newId, PDO::PARAM_INT);
             $ingredient_QUERY->execute();
             
         }

@@ -1,5 +1,6 @@
 <?php
     function getListItems(){
+        //get shopping list items in list format
         $db = dbConnect();
         $statement = $db->query('SELECT id FROM shoppinglist WHERE user_id='.$_SESSION["user_id"]);
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -17,6 +18,7 @@
     }
 
     function getIngredients($menuId){
+        //get ingredients from a meal plan with id $menuId
         $db = dbConnect();
         $statement = $db->query('SELECT recipe_one_id, recipe_two_id, recipe_three_id, recipe_four_id, recipe_five_id FROM menu WHERE id='.$menuId);
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -36,7 +38,7 @@
     }
 
     function addIngredientToList($id){
-        
+        //add an ingredient with id $id to list
         
         $db = dbConnect();
         $statement = $db->query('SELECT id FROM shoppinglist WHERE user_id='.$_SESSION["user_id"]);
@@ -44,21 +46,23 @@
         $listid = $results[0]['id'];
         
         $updateStatement = $db->prepare('UPDATE ingredient SET shoppinglist_id='.$listid.'WHERE id=:id');
-        $updateStatement->bindParam(':id', $id);
+        $updateStatement->bindParam(':id', $id, PDO::PARAM_INT);
         $updateStatement->execute();
     }
 
 
     function removeIngredientFromList($id){
-        
+        //remove ingredient with id $id from list
         $db = dbConnect();
         
         $updateStatement = $db->prepare('UPDATE ingredient SET shoppinglist_id=NULL WHERE id=:id');
-        $updateStatement->bindParam(':id', $id);
+        $updateStatement->bindParam(':id', $id, PDO::PARAM_INT);
         $updateStatement->execute();
     }
 
     function getIngredientsEdit(){
+        //get ingredients in shopping list in checkbox format
+
         $db = dbConnect();
         $statement = $db->query('SELECT id FROM shoppinglist WHERE user_id='.$_SESSION["user_id"]);
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);

@@ -1,13 +1,14 @@
 <?php
+    //controller for meal plans
     session_start();
     require_once '../library/connections.php';
     require_once '../model/meal-plan-model.php';
     require_once '../model/recipe-model.php';
 
 
-    $action = filter_input(INPUT_POST, 'action');
+    $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
     if($action == NULL){
-        $action = filter_input(INPUT_GET, 'action');
+        $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
     }
 
     switch ($action){
@@ -36,12 +37,12 @@
             include '../view/add-meal-plan.php';
         break;
         case 'verify':
-            $date = filter_input(INPUT_POST, 'date');
-            $dayOne = filter_input(INPUT_POST, 'dayOne');
-            $dayTwo = filter_input(INPUT_POST, 'dayTwo');
-            $dayThree = filter_input(INPUT_POST, 'dayThree');
-            $dayFour = filter_input(INPUT_POST, 'dayFour');
-            $dayFive = filter_input(INPUT_POST, 'dayFive');
+            $date = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING);
+            $dayOne = filter_input(INPUT_POST, 'dayOne', FILTER_SANITIZE_NUMBER_INT);
+            $dayTwo = filter_input(INPUT_POST, 'dayTwo', FILTER_SANITIZE_NUMBER_INT);
+            $dayThree = filter_input(INPUT_POST, 'dayThree', FILTER_SANITIZE_NUMBER_INT);
+            $dayFour = filter_input(INPUT_POST, 'dayFour', FILTER_SANITIZE_NUMBER_INT);
+            $dayFive = filter_input(INPUT_POST, 'dayFive', FILTER_SANITIZE_NUMBER_INT);
 
             if(empty($date) || empty($dayOne) || empty($dayTwo) || empty($dayThree) || empty($dayFour) || empty($dayFive)){
                 $message = '<p>Please provide information for all empty form fields.</p>';

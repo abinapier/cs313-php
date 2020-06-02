@@ -1,13 +1,14 @@
 <?php
+    //controller for accounts
     session_start();
     require_once '../library/connections.php';
     require_once '../model/meal-plan-model.php';
     require_once '../model/accounts-model.php';
 
     
-    $action = filter_input(INPUT_POST, 'action');
+    $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
     if($action == NULL){
-        $action = filter_input(INPUT_GET, 'action');
+        $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
     }
 
     switch ($action){
@@ -20,8 +21,8 @@
             include '../view/login.php';
         break;
         case 'login':
-            $clientEmail = filter_input(INPUT_POST, 'email');
-            $clientPassword = filter_input(INPUT_POST, 'password');
+            $clientEmail = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+            $clientPassword = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
             
 
             if(empty($clientEmail)||empty($clientPassword)){
@@ -52,9 +53,9 @@
             exit;
         break;
         case 'register':
-            $clientName = filter_input(INPUT_POST, 'clientName');
-            $clientEmail = filter_input(INPUT_POST, 'clientEmail');
-            $clientPassword = filter_input(INPUT_POST, 'clientPassword');
+            $clientName = filter_input(INPUT_POST, 'clientName', FILTER_SANITIZE_STRING);
+            $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_STRING);
+            $clientPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
 
             if(empty($clientName) || empty($clientEmail) || empty($clientPassword)){
                 $message = '<p>Please provide information for all empty form fields.</p>';
