@@ -1,6 +1,7 @@
 <?php
     function getRecipes(){
         $db = dbConnect();
+        echo "here";
         $statement = $db->query('SELECT id FROM recipebox WHERE user_id='.$_SESSION["user_id"]);
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         $boxid = $results[0]['id'];
