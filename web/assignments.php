@@ -22,6 +22,7 @@
 		<ul>
 			<li><a href="candleu/index.php">Shopping Cart Site</a></li>
 			<li><a href="MealPlan">Meal Plan Database Site</a></li>
+			<li><a href="https://young-ocean-42072.herokuapp.com/">Postal Rate Calculator</a></li>
 		</ul>
 	</main>
 	<footer>
